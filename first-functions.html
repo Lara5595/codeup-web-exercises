@@ -11,6 +11,27 @@
     Write a function that takes gallons and converts to liters.
     <br>
     Write a function that takes degrees  Celsius and converts them to Fahrenheit.</p>
+<br>
+
+<p>
+    Mini-exercise: write a function that returns true if a number is divisible by either 7 or 3, or false if a number is divisible by neither 7 nor 3.
+    <br>
+    Mini-exercise 2: write a function that returns true if a number is divisible by either 3 or 2, or false if it is divisible by neither 2 nor 3.
+    <br>
+    Mini-exercise 3: write a function that returns true if a number is both odd and divisible by 3, or false if the number is neither odd nor divisible by 3.
+    <br>
+    Mini-exercise 4: modify the above function so that it returns true if the number is either odd or divisible by 3, or false if it is neither odd nor divisible by 3. (edited)
+</p>
+    <br>
+    <p>
+        Mini-exercise.  Write a function that takes a person's first, middle, and last names and returns their full name.
+        <br>
+        Mini exercise. Write a function that takes a house number, street name, city, state, and zip code and returns the full address.<br>
+
+        Bonus.  Write a function that takes a number representing the temperature and a boolean representing whether the temperature is Fahrenheit or not.  If it is Fahrenheit, the function converts to Celsius.  Otherwise, it convets to Fahrenheit.  Look up the Fahrenheit to Celsius conversion formula online.
+        <br>
+        Bonus.  Change your functions for liters-gallons and miles-kilometers so they convert both ways.
+    </p>
 
 <script>
     function calculateCircumference(radius) {
@@ -52,19 +73,141 @@
         console.log("That number is odd");
     }
 // //Function to check if a number is Odd//
-//     function isOdd(number){
-//         if (number % 2 === 1){
-//             return true;
-//         } else {
-//             return false;
-//         }
-//     }
+    function isOdd(number){
+        if (number % 2 === 1){
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     //another way to write a function is//
 
     function isOdd(number){
         return Math.abs(number) % 2 === 1;
     }
+
+    if (number % 5 === 0) {
+        if (number % 3 === 0) {
+            console.log("That number is divisible by both 5 and 3");}
+        else
+            {
+                console.log("That number is either not divisible by 5 or not divisible by 3, or both.");
+            }
+        };
+
+    //And and Or Functions BOOLEAN//
+    function divisibleByFiveAndThree(number){
+        return number % 5 === 0 && number % 3 === 0;
+    }
+
+    function divisibleByFiveAndThree(number){
+        return number % 5 === 0 || number % 3 === 0;
+    }
+
+    function divisibleBySevenAndThree(n) {
+        return n % 7 === 0 || n % 3 === 0;
+    }
+
+    function divisibleByThreeAndTwo(t) {
+        return t % 3 === 0 || t % 2 === 0;
+    }
+
+    function numberIsOddAndDivisibleByThree(l) {
+        return l %2 !==0 && l % 3 === 0;
+    }
+
+    function numberIsOddAndDivisibleByThree(l) {
+        return l === 0 || l % 3 === 0;
+    }
+
+    //STRINGS//
+    let myName = "David";
+    let myLastName = "Lara";
+    //Concagnation//
+    let myFullName = myName + " " + myLastName;
+    console.log(myFullName)//
+
+    let x = 1;
+    x = x + 1;
+    console.log(x);
+
+    let sentence = "All the world";
+    sentence = sentence + "'s a stage";
+    console.log(sentence)
+
+    console.log("Shakespeare said: \"All the world's a stage\"")
+    console.log(`Shakespeare said: "All the world's a stage"`);
+
+    // console.log(`${myName} ${myLastName}`);//
+
+    let firstName = "David";
+    let middleName = "Andres";
+    let lastName = "Lara";
+
+    let myFullName2 = firstName + "" + middleName + "" + lastName;
+    console.log(myFullName2);
+
+    function fullName(firstName, middleName, lastName){
+        return `${firstName} ${middleName} ${lastName}`;
+    }
+
+    let houseNumber = "607";
+    let streetName = "Riverhill";
+    let city = "Laredo";
+    let state = "Tx"
+    let zipCode = "55555"
+
+    function adress(houseNumber, streetName, city, state, zipCode) {
+        return `${houseNumber}, ${streetName}, ${city}, ${state}, ${zipCode}`;
+    }
+
+     function temperatureConversion(temperature, isFahrenheit) {
+         if (isFahrenheit === true) {
+          return (temperature - 32) * 5 / 9;
+         } else {
+             return (temperature * 9 / 5) + 32;
+         }};
+
+
+     function upperCase(word) {
+     return word.toUpperCase()
+     };
+     console.log(upperCase("david"));
+
+
+    function lowerCase(string) {
+    return string.toLowerCase()
+    };
+    console.log(lowerCase("Lara"));
+
+    function trimString(string2) {
+        return string2.trim()
+    };
+
+
+    function length(string3) {
+        return string3.length
+    };
+
+
+    // == vs. ===
+
+    let numericString = "42";
+    let theAnswer = 42;
+
+    function dataType(value){
+        return typeof value;
+    }
+
+    let someValue = "42";
+    if (dataType(someValue) === "number") {
+        console.log("That's a number");
+    } else {
+        console.log("That's not a number");
+    }
+
+
 
 </script>
 </body>
