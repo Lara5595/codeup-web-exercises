@@ -44,6 +44,28 @@
         return volume
     }
 
+
+    let number = 21;
+    if(number % 2 === 0) {
+        console.log("That number is even.");
+    } else {
+        console.log("That number is odd");
+    }
+// //Function to check if a number is Odd//
+//     function isOdd(number){
+//         if (number % 2 === 1){
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     }
+
+    //another way to write a function is//
+
+    function isOdd(number){
+        return Math.abs(number) % 2 === 1;
+    }
+
 </script>
 </body>
 </html>
