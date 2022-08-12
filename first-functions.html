@@ -34,6 +34,9 @@
     </p>
 
 <script>
+
+    //Basic functions
+
     function calculateCircumference(radius) {
         const pi = 3.14159;
         let circumference = 2 * pi * radius;
@@ -65,6 +68,7 @@
         return volume
     }
 
+    //functions with conditionals
 
     let number = 21;
     if(number % 2 === 0) {
@@ -121,7 +125,7 @@
         return l === 0 || l % 3 === 0;
     }
 
-    //STRINGS//
+    //STRINGS and string concanation //
     let myName = "David";
     let myLastName = "Lara";
     //Concagnation//
@@ -193,18 +197,31 @@
 
     // == vs. ===
 
-    let numericString = "42";
-    let theAnswer = 42;
+    // let numericString = "42";
+    // let theAnswer = 42;
+    //
+    // function dataType(value){
+    //     return typeof value;
+    // }
 
-    function dataType(value){
-        return typeof value;
-    }
+    //Typeof Operator
 
-    let someValue = "42";
-    if (dataType(someValue) === "number") {
-        console.log("That's a number");
-    } else {
-        console.log("That's not a number");
+    // let someValue = "42";
+    // if (dataType(someValue) === "number") {
+    //     console.log("That's a number");
+    // } else {
+    //     console.log("That's not a number");
+    // }
+
+
+    //Write a function that takes two values.  If the values can be converted to numbers, the function should return their product.  Otherwise, the function should return false.
+
+    function multiply(value1, value2) {
+        if (isNaN(parseFloat(value1)) || isNaN(parseFloat(value2))){
+            return false;
+        } else {
+            return parseFloat(value1) * parseFloat(value2);
+        }
     }
 
 
