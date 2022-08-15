@@ -28,7 +28,8 @@ console.log(helloMessage);
  * console.
  */
 let myName = "David"
-var sayHello = myName
+console.log(sayHello("David"));
+//var sayHello = myName
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -52,8 +53,9 @@ let random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 function isTwo(number) {
-    return number === 2
+    return number === 2;
 }
+console.log(isTwo(random));
 
 /**
  * TODO:
@@ -81,7 +83,9 @@ function  calculateTip(percentage,totalBill) {
  */
 let billTotal = prompt(" What was your bill total?");
 let percentage = prompt(" How much would you like to tip?");
-let display = alert("This is how much you should tip! " + calculateTip(billTotal,percentage));
+//let display = alert("This is how much you should tip! " + calculateTip(billTotal,percentage));
+let tip = calculateTip(percentage/100, billTotal)
+alert("Your tip is $" + tip.toFixed(2));
 
 /**
  * TODO:
@@ -101,3 +105,5 @@ let display = alert("This is how much you should tip! " + calculateTip(billTotal
 function applyDiscount(before,discountPercent) {
     return before - (before * discountPercent);
 }
+
+//return priceBeforeDiscount * (1 - discountPercentage);
