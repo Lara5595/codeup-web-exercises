@@ -1,105 +1,6 @@
-// let flavor = prompt("Welcome to Codeup ice cream. What flavor do you want?");
-//
-// flavor = flavor.toLowerCase();
-
-//Else If statements
-
-// if (flavor === "chocolate") {
-//     alert("One chocolate coming right up!")
-// } else if (flavor === "vanilla"){
-//     alert("One vanilla comimng right up");
-// } else {
-//     alert("We do not have that flavor. Sorry!");
-// }
-
-
-//Switch statements
-// switch (flavor) {
-//     case("chocolate"):
-//         alert("One chocolate coming right up!");
-//         break;
-//     case("vanilla"):
-//         alert("One vanilla coming right up!");
-//     case ("strawberry") :
-//         alert("One strawberry coming right up!")
-//         break
-//     default:
-//         alert("We do not have that flavor. Sorry!");
-// }
-
-// let decision = confirm("Are you sure you want to close this page");
-// alert(decision);
-//
-// if (decision) {
-//     alert("Ok, closing the page.");
-// } else {
-//     alert("Ok, keeping the page open.");
-// }
-
-
-
-// // Ternary statement
-// (decision)?alert("Closing the page"):alert("Keeping page open.");
-
-
-
-// let number = prompt("Enter a number:");  another way to write this by putting the prompt inside
-
-// function divisibleByFive(number) {
-//     if (number % 5 === 0 && number !== null){    <--- the null is used for when you click the box it doesnt say its divisible
-//         alert("That number is divisible by 5"); }
-//     else {
-//         alert("That number is not divisible by 5");
-//     }
-// }
-
-
-// function divisibleByFive(number){
-//     number % 5 === 0 ? alert("That number is divisible by 5") : alert ("That number is not divisible by 5");
-// }
-
-
-// function divisibleByFive(number){
-//     alert(number % 5 === 0 ? "That number is divisible by 5" : "That number is not divisible by 5");
-// }
-//
-// divisibleByFive(prompt("Enter a number:"));  // <-- another way
-//
-
-
-// function alertMVPCustomer(purchaseTotal) {
-//     if (purchaseTotal > 1000) {
-//         alert("MVP!")
-//     } else {
-//         alert("peasant")
-//     }
-// }
-//
-// alertMVPCustomer(1000);
-
-// function  isMVP(purchaseTotal) {
-//     return purchaseTotal > 1000;
-// }
-//
-// let customer1purchase = 1001;
-//
-// if (isMVP(customer1purchase)) {
-//     alert("MVP!")
-// }
-
-// function isMPV(total) {
-//     alert((total > 1000 ? "You are MVP" : "PEASANT!"));
-// }
-//
-// isMPV(prompt("Enter a number"));
-
-
-
-
 
 //Assigment
 
-"use strict";
 
 /* ########################################################################## */
 
@@ -122,7 +23,14 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-
+// Another way to do step 1
+//  function analyzeColor(color) {
+//     if (color === "red") {
+//         return "roses are red"
+//     } else if (color === "orange") {
+//         return "orange is orange "
+//     }
+// }
 // let userInput = prompt("Choose a color");
 //
 // let color = userInput.toLowerCase();
@@ -235,6 +143,13 @@ function  calculateTotal(luckyNumber,totalNumber) {
  var totalAfter = calculateTotal(luckyNumber,totalNumber);
 
 alert( "Your total was " + totalNumber + " and your lucky number is " + luckyNumber + " Your discounted price is " + totalAfter);
+
+//another way to do it is -
+// let bill = prompt("please enter your total bill");
+// alert("your luck number was" + luckyNumber + "\n") +
+//     "Your price before discount was $ " + bill + "\n" +
+//     "Your price after discount is $" + calculateTotal(luckyNumber,bill));
+
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -254,4 +169,22 @@ alert( "Your total was " + totalNumber + " and your lucky number is " + luckyNum
  * HINT: The way we prompt for a value could be improved
  */
 
-let number = prompt("Do you want to add a number");
+
+let wantsToEnterNumber = confirm("Do you want to enter a number?");
+if (wantsToEnterNumber) {
+    userNumber = prompt("Enter a number");
+}
+  if (userNumber % 2 === 0) {
+      alert(userNumber + " is even");
+  } else {
+      alert(userNumber + " is odd");
+  }
+  alert(userNumber + " plus 100 equals " + (userNumber + 100));
+  if (userNumber < 0) {
+      alert("That is a negative number");
+  }  else {
+      alert(" That is a positive number");
+  }
+
+
+
