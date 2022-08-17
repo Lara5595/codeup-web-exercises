@@ -188,3 +188,21 @@ if (wantsToEnterNumber) {
 
 
 
+// // another way is
+// function oddOrEven(number) {
+//       return number % 2 === 0 ? number + " is even." : number + " is odd.";
+// }
+//
+// function  numberPlus100(number) {
+//       return number.tostring() + " plus 100 equals " + (number + 100);
+// }
+
+    // function negativeOrPositive(number){
+    //   return number < 0 ? number + " is a negative number. " : number + " is a positive number"
+    // }
+
+// function getNumber() {
+if (confirm("Do you want to enter a number?")){
+
+}
+
