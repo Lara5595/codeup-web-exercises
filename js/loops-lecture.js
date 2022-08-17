@@ -93,10 +93,55 @@
 
 // Do while loop
 
-let number = Math.ceil(Math.random() * 6);
-let guess;
-console.log(guess);
-do {
-    let guess = parseInt(prompt("Enter a number between 1 and 6"));
-} while (guess !== number);
-alert(`Your guess of ${guess} matches the number ${number}!`);
+// let number = Math.ceil(Math.random() * 6);
+// let guess;
+// console.log(guess);
+// do {
+//     let guess = parseInt(prompt("Enter a number between 1 and 6"));
+// } while (guess !== number);
+// alert(`Your guess of ${guess} matches the number ${number}!`);
+
+
+// counts to 0
+// this is the loop control variable
+// initialize it to a starting value
+// let count = 100;
+// // check the value of the loop control variable in a conditional test
+// while (count >= 0) {
+//     console.log(count);
+//     // change the value of the loop control variable
+//     count = count - 1;
+// }
+
+
+
+// for loop is a short hand for the while loop
+//for loop
+
+// for(let count = 100; count >= 0; count = count -1){
+//     console.log(count);
+// }
+//
+
+// // another way is
+// for (let i = 100; i >= 0; i--){
+//     console.log(i);
+// }
+
+
+
+
+
+// while and for loop
+
+// let i = 0;
+// while (i < 100) {
+// console.log(i);
+// i++; }
+//
+// console.log("Outside the loop: " + i);
+
+
+for(i = 0; i <101; i++){
+    console.log(i);
+}
