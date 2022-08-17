@@ -69,17 +69,34 @@
 // }
 
 // easy way below for the priceOfItem
-let total = 0;
-let priceOfItem;
-while(true) {
-    let userInput = prompt("Enter the price of your item: " + "\n Enter STOP when you are done");
-    if (userInput === "STOP") {
-        alert("Your final total is " + total.toFixed(2));
-        break;
-    } else {
-        priceOfItem = parseFloat(userInput);
-        total = total + priceOfItem;
-        alert("Your total is " + total.toFixed(2));
-        // .toFixed makes it not have alot of decimals if we type 2 its only ex 9.(99)
-    }
-}
+// let total = 0;
+// let priceOfItem;
+// while(true) {
+//     let userInput = prompt("Enter the price of your item: " + "\n Enter STOP when you are done");
+//     if (userInput === "STOP") {
+//         alert("Your final total is " + total.toFixed(2));
+//         break;
+//     } else {
+//         priceOfItem = parseFloat(userInput);
+//         total = total + priceOfItem;
+//         alert("Your total is " + total.toFixed(2));
+//         // .toFixed makes it not have alot of decimals if we type 2 its only ex 9.(99)
+//     }
+// }
+
+// Math.floor() rounds the numbers
+// Math.random picks a random number
+// Math.floor(Math.random() * 6)  returns a number 0 to 5 a + 1 will be 1 to 5
+// Math.ceil() will round up and Math.round will round down
+// Math.sign() return a positive to a negative
+// ** is a exponent operator
+
+// Do while loop
+
+let number = Math.ceil(Math.random() * 6);
+let guess;
+console.log(guess);
+do {
+    let guess = parseInt(prompt("Enter a number between 1 and 6"));
+} while (guess !== number);
+alert(`Your guess of ${guess} matches the number ${number}!`);
