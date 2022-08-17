@@ -36,7 +36,7 @@
 // }
 //
 
-//Psedocode
+//Pseducode
 // Ask a user for input -- how much does something cost
 // Assign the user input to a variable
 // Declare a variable to hold the total cost
