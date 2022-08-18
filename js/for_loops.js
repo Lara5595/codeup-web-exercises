@@ -53,12 +53,37 @@
 //      console.log(count);
 //  }
 
-for (let i = 100; i >= 5; i = i - 5) {
-    console.log(i);
-}
+// for (let i = 100; i >= 5; i = i - 5) {
+//     console.log(i);
+// }
 
 
 
 
 
 
+// Break and Continue
+
+// let string = "";
+// for (let i = 0; i < 8; i++){
+//     let word = prompt("Let's make a sentence! Enter a word ");
+//     if (word === "curses") {
+//         console.log("That word is not allowed")
+//         break;
+//     }
+//     string += " " + word;
+//     console.log("Your sentence is: " + string);
+// }
+//
+
+
+// let string = "";
+// for (let i = 0; i < 8; i++){
+//     let word = prompt("Let's make a sentence! Enter a word ");
+//     if (word === "curses") {
+//         console.log("That word is not allowed")
+//         continue;
+//     }
+//     string += " " + word;
+//     console.log("Your sentence is: " + string);
+// }
