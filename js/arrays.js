@@ -142,8 +142,25 @@ console.log(groceryList.sort());
 // }
 // console.log(groceryList.sort());
 
-// forEach array lower cases the array 
+//forEach array lower cases the array
 groceryList.forEach((item, index, array) => {
     array[index] = item.toLowerCase();
 })
 console.log(groceryList);
+
+
+
+
+// split
+
+let quote = "All the world's a play";
+let quoteArray = quote.split(' ');
+console.log(quoteArray);
+quoteArray = quoteArray.reverse();
+console.log(quoteArray);
+
+
+// join
+
+quote = quoteArray.join(' ').toLowerCase();
+console.log(quote);
