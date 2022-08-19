@@ -23,10 +23,16 @@
      */
 
     // console.log(names)
+    // console.log(names[0]);
+    // console.log(names[1]);
+    // console.log(names[2]);
+    // console.log(names[3]);
+    //
 
 
 
-    /**
+
+/**
      * TODO:
      * Write some code that uses a for loop to log every item in the names
      * array.
@@ -65,13 +71,22 @@
     let nums = [1, 2, 3, 4, 5];
 
     function first(number){
-        console.log(number[0]);
+        return (number[0]);
     };
 
     function second(number){
-        console.log(number[1]);
+        return  (number[1]);
     };
 
     function last(number) {
-        console.log(number[number.length -1]);
+        return (number[number.length -1]);
     };
+
+    // function first(array) {
+    //     return array[0];
+
+// function second(array) {
+   //return array[1];
+
+// function last(array) {
+// return array[array.length -1];

@@ -2,7 +2,7 @@
 // declaring an array literal
 // each item in an array is called an element
 
-// let groceryList = ['bread', 'eggs', 'butter', 'milk'];
+let groceryList = ['bread', 'eggs', 'butter', 'milk'];
 //
 // for(let i = 0; i < groceryList.length; i++) {
 //     if (i === groceryList.length - 1){
@@ -33,12 +33,12 @@
 //     }
 // }
 
-
-function  outputArray(array) {
-    for (let i = 0; i < array.length; i++) {
-        console.log(array[i]);
-    }
-}
+//
+// function  outputArray(array) {
+//     for (let i = 0; i < array.length; i++) {
+//         console.log(array[i]);
+//     }
+// }
 //
 // outputArray(texasCities);
 
@@ -61,6 +61,78 @@ let prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
 
 // Arrow functions syntax
 
-prices.forEach((price) => {
-    console.log(price)
+// prices.forEach((price) => {
+//     console.log(price)
+// });
+
+
+
+
+
+
+
+// how to .push  add a item to the end of the list
+groceryList.push("potatoes");
+console.log(groceryList);
+
+// how to   .pop will eliminate the last item
+groceryList.pop();
+console.log(groceryList);
+
+// how to .unshift  add to the beginning of list
+groceryList.unshift("sliced cheddar");
+console.log(groceryList);
+
+// how to .shift takes away from the front
+groceryList.shift();
+console.log(groceryList);
+
+
+
+
+// indexOf shows you where the value is
+let indexOfButter = groceryList.indexOf("butter");
+console.log(indexOfButter);
+// replaces butter with peanut butter ^
+groceryList[indexOfButter] = "peanut butter";
+console.log(groceryList);
+
+
+// slice takes off items of the list
+let firstHalfOfGroceryList = groceryList.slice(0,2);
+console.log(firstHalfOfGroceryList);
+
+let secondHalfOfGroceryList = groceryList.slice(2);
+console.log(secondHalfOfGroceryList);
+
+// .concat joins two arrays together
+firstHalfOfGroceryList.push("butter");
+groceryList = firstHalfOfGroceryList.concat(secondHalfOfGroceryList);
+console.log(groceryList);
+
+
+// .reverse reverses the order
+groceryList.reverse();
+console.log(groceryList)
+
+//  .sort sets a order
+groceryList.sort();
+console.log(groceryList);
+
+// .reverse reverses the order
+groceryList.sort();
+console.log(groceryList.reverse());
+
+
+// .sort in functions
+
+prices.sort(function (a,b){
+    return a-b;
 });
+console.log(prices);
+
+// putting something in the middle of the list
+groceryList[3] = "Blueberries";
+console.log(groceryList);
+console.log(groceryList.sort());
+
