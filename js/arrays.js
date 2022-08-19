@@ -136,3 +136,14 @@ groceryList[3] = "Blueberries";
 console.log(groceryList);
 console.log(groceryList.sort());
 
+// for array
+// for( let i = 0; i < groceryList.length; i++) {
+//     groceryList[i] = groceryList[i].toLowerCase();
+// }
+// console.log(groceryList.sort());
+
+// forEach array lower cases the array 
+groceryList.forEach((item, index, array) => {
+    array[index] = item.toLowerCase();
+})
+console.log(groceryList);
