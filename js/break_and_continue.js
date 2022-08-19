@@ -3,6 +3,7 @@
 function isNumber(value) {
     return !(isNaN(value) || typeof value === "boolean");
 }
+for equivalent of while(true) -- for(;;)
 while (true) {
     let oddNumber = prompt("Please enter an odd number:");
     if(oddNumber >= 1 && oddNumber <= 50 && oddNumber % 2 === 1 && isNumber(oddNumber)) {
