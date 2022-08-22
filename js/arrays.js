@@ -164,3 +164,48 @@ console.log(quoteArray);
 
 quote = quoteArray.join(' ').toLowerCase();
 console.log(quote);
+
+
+
+
+
+let wishList = [25, 15, 34, 8, 59];
+
+function checkWishListPrices(wishList){
+    for (let i = 0; i < wishList.length; i++) {
+        if (wishList[i] > 50) {
+            return false;
+        }
+        return true;
+    }
+}
+console.log(checkWishListPrices(wishList));
+
+
+
+
+function checkWishListTotal(wishList) {
+    let total = 0;
+    for (let i = 0; i < wishList.length; i++){
+        total += wishList[i];
+    }
+    return total <= 100;
+}
+console.log(checkWishListTotal(wishList));
+
+function processWishList(wishList, testFunction1, testFunction2) {
+    return testFunction1(wishList) && testFunction2(wishList);
+}
+
+console.log(processWishList(wishList, checkWishListPrices, checkWishListTotal));
+
+//Bonus challenge.  Create a function that takes a sentence and turns it into Zatanna magic language.  Zatanna uses magic by taking sentences and reversing each word one by one, but keeping the original order of the words.  So, "give me a perfect score on all my tests" must become "Evig em a tcefrep erocs no lla ym stset!" (edited)
+
+function zatannaMagic(string){
+    let commandArray = string.toLowerCase().split(" ");
+    let newArray = [];
+    for (let i = 0; i < commandArray.length; i++) {
+        newArray.push(commandArray[i].split('').reverse().join(''));
+    }
+        return newArray.join(' ') + "!";
+}
