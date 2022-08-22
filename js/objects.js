@@ -164,7 +164,7 @@ console.log(books[1].author.lastName);
    books.forEach(function (book, index){
        console.log("Book # " + (index + 1));
        console.log("Title: " + book.title);
-       console.log(`Author ]: ${book.author.firstName} ${book.author.lastName}`);
+       console.log(`Author : ${book.author.firstName} ${book.author.lastName}`);
        console.log("---");
    })
 
@@ -201,3 +201,15 @@ function createBook(title,firstName,lastName) {
 //
 // books.push(new Book("1984", "George", "Orwell"));
 
+
+
+function showBookInfo(book, index) {
+    console.log("Title: " + book.title);
+    console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+    console.log("---");
+
+    books.forEach(function (book, index){
+        // console.log("Book # " + (index + 1));
+        showBookInfo(book,index);
+    })
+}
