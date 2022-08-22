@@ -19,8 +19,11 @@
     let person = {
         firstName : "David",
         lastName : "Lara",
-        sayHello : "Hello from"
+        sayHello : function (){
+            return `Hello from ${this.firstName} ${this.lastName}`;
+        }
     }
+console.log(person.sayHello());
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -52,9 +55,17 @@ console.log(`${person.sayHello}  ${person.firstName} ${person.lastName}`);
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
+    // my answer kinda right
+    // shoppers.forEach(shoppers =>
+    // console.log(`For ${shoppers.name} the price before is ${shoppers.amount} and the price after the discount is ${shoppers.amount - shoppers.amount * .12}`));
 
-    shoppers.forEach(shoppers =>
-    console.log(`For ${shoppers.name} the price before is ${shoppers.amount} and the price after the discount is ${shoppers.amount - shoppers.amount * .12}`));
+
+
+    shoppers.forEach(function (shopper){
+        let discount = (shopper.amount > 200 ? shopper.amount * .12 : 0).toFixed(2);
+        let total = shopper.amount - discount;
+        console.log(`${shopper.name}-- total: $${shopper.amount}, discount: $${discount} final amount $${shopper.amount - shopper.amount * .12}`);
+    })
 
 
 /** TODO:
@@ -145,11 +156,17 @@ console.log(books[1].author.lastName);
      */
 
 
-    for (let i = 0; i < books.length; i++) {
-        console.log(`Book # ${i + 1} \n title: ${books[i].title} \n Author: ${books[i].author.firstName} ${books[i].author.lastName}`);
-    }
+    // for (let i = 0; i < books.length; i++) {
+    //     console.log(`Book # ${i + 1} \n title: ${books[i].title} \n Author: ${books[i].author.firstName} ${books[i].author.lastName}`);
+    // }
 
-
+   // another way is
+   books.forEach(function (book, index){
+       console.log("Book # " + (index + 1));
+       console.log("Title: " + book.title);
+       console.log(`Author ]: ${book.author.firstName} ${book.author.lastName}`);
+       console.log("---");
+   })
 
     /**
      * Bonus:
@@ -170,6 +187,17 @@ function createBook(title,firstName,lastName) {
          lastName: lastName
      }
     }}
-
-
+// you can add the book to the list by
+// books.push(createBook("The Great Gatsby", "F.Scott", "Fitzgerald"));
+//
+//
+//
+// function Book(title, firstName, lastName) {
+//     console.log("Book # " + (index +1 ));
+//     console.log("Title: " + book.title);
+//     console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+//     console.log("----");
+// }
+//
+// books.push(new Book("1984", "George", "Orwell"));
 
