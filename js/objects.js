@@ -232,13 +232,13 @@
 
 // use an object constructor
 
-// function Monster(name, hitPoints, maxDamge){
+// function Monster(name, hitPoints, maxDamage){
 //     this.name = name;
 //     this.hitPoints = hitPoints;
 //     this.maxDamage = maxDamge;
 // }
 //
-// model.hobgoblinCaptain = new Monster("Hobgoblin Captian", 39, 14);
+// model.hobgoblinCaptain = new Monster("Hobgoblin Captain", 39, 14);
 // controller.attack(model.hobgoblinCaptain, model.fighter);
 
 // list of models
@@ -302,7 +302,11 @@ console.log(`${person.sayHello}  ${person.firstName} ${person.lastName}`);
         {name: 'George', amount: 320}
     ];
 
-    /** TODO:
+    shoppers.forEach(shoppers =>
+    console.log(`For ${shoppers.name} the price before is ${shoppers.amount} and the price after the discount is ${shoppers.amount - shoppers.amount * .12}`));
+
+
+/** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
      * property. The author property should be an object with properties
@@ -316,6 +320,53 @@ console.log(`${person.sayHello}  ${person.firstName} ${person.lastName}`);
      */
 
 
+    let books = [
+        {
+            title: "Codeup",
+            author: {
+                firstName: "Javier",
+                lastName:  "instructor"
+            }
+        },
+
+        {
+            title: "Game of thrones",
+            author: {
+                firstName: "George",
+                lastName: "Martin"
+            }
+        },
+
+        {
+            title: "Harry Potter",
+            author: {
+                firstName: "Simons",
+                lastName: "simons"
+            }
+        },
+
+        {
+            title: "Green Eggs and Ham",
+            author: {
+                firstName: "Dr",
+                lastName: "Seus"
+            }
+        },
+
+        {
+            title: "Army",
+            author: {
+                firstName: "Joe",
+                lastName: "biden"
+            }
+        }
+
+    ];
+    console.log(books[0].title);
+    console.log(books[4].author.lastName);
+console.log(books[3].author.firstName);
+console.log(books[2].author);
+console.log(books[1].author.lastName);
 
     /**
      * TODO:
@@ -342,6 +393,13 @@ console.log(`${person.sayHello}  ${person.firstName} ${person.lastName}`);
      *      ...
      */
 
+
+    for (let i = 0; i < books.length; i++) {
+        console.log(`Book # ${i + 1} \n title: ${books[i].title} \n Author: ${books[i].author.firstName} ${books[i].author.lastName}`);
+    }
+
+
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -353,4 +411,14 @@ console.log(`${person.sayHello}  ${person.firstName} ${person.lastName}`);
      *   `showBookInfo` function.
      */
 
-// })();
+function createBook(title,firstName,lastName) {
+    return {
+     title: title,
+     author: {
+         firstName: firstName,
+         lastName: lastName
+     }
+    }}
+
+
+
