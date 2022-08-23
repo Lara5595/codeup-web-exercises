@@ -213,3 +213,5 @@ function showBookInfo(book, index) {
         showBookInfo(book,index);
     })
 }
+
+// Need to study for assigment

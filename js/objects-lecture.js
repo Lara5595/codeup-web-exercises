@@ -249,3 +249,31 @@
 // }
 
 
+
+
+
+// Object Destructuring
+
+const car = {
+    make: "Toyota",
+    model: "Tacoma",
+    year: 2019,
+    mileage: 12657
+}
+//
+// let make = car.make;
+// let carModel = car.model;
+//
+// console.log(make);
+// console.log(carModel);
+
+const {make, model, year, mileage} = car;
+console.log(make)
+console.log(model);
+console.log(year);
+console.log(mileage);
+
+const outputCarInfo = ({make, model, year, mileage} = car)  =>  {
+    console.log(`${year} ${make} ${model} with ${mileage}`)}
+outputCarInfo(car);
+
