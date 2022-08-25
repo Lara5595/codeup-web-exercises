@@ -22,47 +22,61 @@
         img {
             width: 300px;
         }
-    </style>
-</head>
-<body>
-<!-- Heading elements-->
-<h1>David Lara</h1>
-<h2> CodeUp student</h2>
-<!-- how to add a img-->
-<img src="img/download.png" alt="codeup duck">
 
-<h3> Hello</h3>
-<h4> I am h4</h4>
-<h5> I am h5</h5>
-<h6> I am h6</h6>
+        #header{
+            border: 2px solid white;
+            padding: 5px;
+            padding-bottom: 10px;
+            border-radius: 7px;
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
 
-<!-- These are paragraphs-->
-<p> I am a CodeUp student barely learning javascript and html.</p>
-<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At atque corporis dolorum ducimus eveniet harum in maiores minima officia, perferendis provident quidem totam ullam. Animi consequuntur perferendis provident quibusdam quisquam.</p>
-<!-- If it does not have the paragraphs it will be all together it does not have the markup-->
+    <!-- Heading elements-->
+    <div id="header">
+<!--        or you can do semantic element  like <header>-->
+    <h1>David Lara</h1>
+    <h2> CodeUp student</h2>
+    <!-- how to add a img-->
+    <img src="img/download.png" alt="codeup duck">
+    </div>
+<!--    </header>-->
+    <div id="main">
+<!--    or    <main>-->
+    <h3> Hello</h3>
+    <h4> I am h4</h4>
+    <h5> I am h5</h5>
+    <h6> I am h6</h6>
 
-<!--List  there is unordered and ordered list.-->
-<!--ul gives you dots and ol gives you numbers.-->
-<h1>This are programming languages</h1>
-<ul>
-    <li>JavaScript</li>
-    <li>Java</li>
-    <li>PhP</li>
-    <li>Ruby</li>
-</ul>
-<h2> I am learning </h2>
-<ol>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-    <li>Java</li>
-    <li>Java2</li>
-</ol>
+    <!-- These are paragraphs-->
+    <p> I am a CodeUp student barely learning javascript and html.</p>
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At atque corporis dolorum ducimus eveniet harum in maiores minima officia, perferendis provident quidem totam ullam. Animi consequuntur perferendis provident quibusdam quisquam.</p>
+    <!-- If it does not have the paragraphs it will be all together it does not have the markup-->
+
+    <!--List  there is unordered and ordered list.-->
+    <!--ul gives you dots and ol gives you numbers.-->
+    <h1>This are programming languages</h1>
+    <ul>
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>PhP</li>
+        <li>Ruby</li>
+    </ul>
+    <h2> I am learning </h2>
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>Java2</li>
+    </ol>
 
 
 <!-- tables-->
-<p> Tables</p>
-<table>
+    <p> Tables</p>
+    <table>
     <caption>My Prices</caption>
     <tr>
         <th>Service</th>
@@ -84,13 +98,23 @@
         <td>$12000</td>
         <td>6 weeks</td>
     </tr>
-</table>
+    </table>
+    </div>
+<!--    </main> -->
+    <div id="footer">
+<!--   or     <footer> -->
 <!-- hr creates a line on html -->
-<hr>
+    <hr>
 <!--a href links -->
 <!-- I linked quotes.html to this page-->
-<a href="quotes.html">Inspirational Quotes</a>
+    <a href="quotes.html">Inspirational Quotes</a>
+    </div>
 
+<!--    Nav bar-->
+    <a href="#">Contact Us</a>
+    <a href="#">About me</a>
+    <a href="#"> inspirational Quotes</a>
+<!--    </footer>-->
 
 
 </body>
