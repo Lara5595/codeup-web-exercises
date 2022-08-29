@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Forms</title>
@@ -28,5 +28,64 @@
     <input type="text" name="city" id="city"><br>
     <br>
     <input type="submit" value="submit">
+</form>
+<br>
+<!--another way to do it is -->
+<a href="http://request-inspector.glitch.me?username=jojo&streetAddress=678+Main+Street&city=San+Anotionio&admin=true">Send Request</a>
+
+<!-- Making radios for forms-->
+<form method="POST" action="http://request-inspector.glitch.me">
+    <h3>Marvel or DC?</h3>
+    <label for="marvel">Marvel</label>
+    <input type="radio" name="marvelOrDC" value="Marvel" id="Marvel">
+    <br>
+   <label for="dc">DC</label>
+    <input type="radio" name="marvelOrDC" value="DC" id="DC">
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+
+<!-- how to choose multiple choices with checkbox-->
+<form method="POST" action="http://request-inspector.glitch.me">
+<h4>Choose your extras:</h4>
+<input type="checkbox" name="extras" value="Provolone" id="provolone">
+    <label for="provolone">Provolone</label><br>
+<input type="checkbox" name="extras" value="Cheddar" id="cheddar"><label for="cheddar">Cheddar</label><br>
+<input type="checkbox" name="extras" value="American Cheese" id="american"><label for="american">American Cheese</label><br>
+<input type="checkbox" name="extras" value="Swiss" id="swiss"><label for="swiss">Swiss Cheese</label><br>
+<input type="checkbox" name="extras" value="Pepper Jack" id="pepperJack"><label for="pepperJack">Pepper Jack</label><br>
+<input type="checkbox" name="extras" value="Jalapenos" id="jalapenos"><label for="jalapenos">Sliced Jalapenos</label><br>
+<input type="checkbox" name="extras" value="Mushrooms" id="mushrooms"><label for="mushrooms">Sauteed Mushrooms</label><br>
+<input type="checkbox" name="extras" value="Onions" id="onions"><label for="onions">Grilled Onions</label><br>
+<input type="checkbox" name="extras" value="Bacon" id="bacon"><label for="bacon">Extra Bacon</label><br>
+<input type="checkbox" name="extras" value="Guacamole" id="guacamole"><label for="guacamole">Guacamole</label><br>
+  <br>  <input type="submit" value="Submit">
+
+
+<!--how to do a dropdown menu-->
+
+<h4><label for="destination">Choose your destination:</label></h4>
+<select name="destination" id="destination">
+    <option value="Hawaii">Hawaii</option>
+    <option value="Yucatan">Yucatan</option>
+    <option value="Greece">Greece</option>
+    <option value="Florida">Florida</option>
+    <option value="California">California</option>
+</select>
+
+
+
+<!--    how to do a text area -->
+    <h4><label for="comments">Please Leave Your Comments:</label></h4>
+    <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+    <br>
+    <input type="submit" value="Submit">
+    <br>
+    <br>
+<!--    reset button resets your form-->
+    <input type="reset">
+    <br>
+</form>
 </body>
 </html>
