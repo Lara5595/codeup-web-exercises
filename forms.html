@@ -2,9 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Forms</title>
+    <title>Register With Us</title>
 </head>
 <body>
+<form method="POST" action="http://request-inspector.glitch.me/">
+    <fieldset>
+        <legend><h3>Please Fill Out</h3></legend>
+        <label for="username">UserName: </label>
+        <input type="text" name="username" id="username">
+        <br><br>
+        <label for="password"> Password: </label>
+        <input type="text" name="password" id="password">
+    </fieldset>
+
+    <fieldset>
+        <legend><h3>About yourself</h3></legend>
+        <h4><label>Please fill out</label></h4>
+        <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+    </fieldset>
+
+    <fieldset>
+        <legend><h3>How did you hear about us</h3></legend>
+        <input type="radio" name="ads" value="radio" id="radio">
+        <label for="billboard">Billboard</label> <br><br>
+
+        <input type="radio" name="ads" value="radio advertisement" id="radio advertisement">
+        <label for="radio advertisement">Radio advertisement</label><br><br>
+
+        <input type="radio" name="web" value="internet advertisement" id="internet advertisement">
+        <label for="internet advertisement">Internet Advertisement</label> <br><br>
+
+        <input type="radio" name="web" value="other" id="other">
+        <label for="other">Other</label>
+    </fieldset>
+
+    <fieldset>
+        <legend><h3>What Browser are you using</h3></legend>
+        <select name="browsers" id="browsers">
+            <option value="Chrome">Chrome</option>
+            <option value="Safari">Safari</option>
+            <option value="Firefox">FireFox</option>
+            <option value="Edge">Edge</option>
+        </select>
+    </fieldset>
+    <br><br>
+    <input type="submit" value="Submit">
+
+</form>
 
 </body>
 </html>
