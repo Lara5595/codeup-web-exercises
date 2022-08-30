@@ -1,7 +1,7 @@
 const htmlBody = document.querySelector('body');
 
 const randomClickfunction = function () {
-    const colors = ["#002942", "#0Ca708", "red", "blue", "green", "beige", "orange", "purple"];
+    const colors = ["#8ec0de", "lightred", "lightblue",  "beige", "orange"];
 
     const randomIndex = Math.floor(Math.random() * colors.length);
 

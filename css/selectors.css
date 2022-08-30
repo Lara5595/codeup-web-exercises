@@ -18,7 +18,7 @@
     font-weight: bold;
 }
 
-/* selector for all elements with class="article" */
+/*!* selector for all elements with class="article" *!*/
 .article {
     clear:both;
 }

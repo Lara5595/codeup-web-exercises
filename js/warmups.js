@@ -221,3 +221,22 @@ function beeramid(bonus,price) {
 // }
 //
 // Regardless of the case of the first name and last name input, the output should be in all lower case.
+
+
+// this loops through the array and breaks when it reaches 5
+for (i = 0; i < 11; i++) {
+    console.log(i);
+    if (i == 5) {
+        break
+    }
+}
+
+// this loops through the function and jumpt to the next iteration
+for (i = 0; i < 10; i++) {
+    if (i == 5) {
+
+        continue
+            ;
+    }
+    console.log(i);
+}
