@@ -1,3 +1,17 @@
 h1 {
-    color: purple;
+    color: ghostwhite;
+    text-decoration: underline;
 }
+
+.fancy-header {
+    text-align: center;
+}
+
+* {
+    background-color: antiquewhite;
+    background-image: url(../img/wood-591631_1280.jpeg);
+    color: aliceblue;
+
+
+}
+
