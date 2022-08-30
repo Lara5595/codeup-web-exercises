@@ -29,6 +29,7 @@
 <h2>3. Why use rgb to define a CSS color vs. a hex value?</h2>
 <p>RGB is specific to digital applications and is the most common color profile used by tv, computer monitors and mobile devices.
     RGB uses an additive process which is the opposite of CMYK. This results in a larger range of colors than printed colors.</p>
+<img src="img/Print-conversion-usage-1024x1024.jpeg" height="25%" width="25%" <br><br>
 
 
 
@@ -36,8 +37,29 @@
 <p>3 digit hex values are a simplified version of 6 digit hex values. Not all 6 digit hex values can be converted into a 3 digit. An example of what can be converted is when duplicate characters are present:
     #FFCC00 => #FC0</p>
 
-<h2>5.'background' and 'background-color' properties can produce the same output; why is this possible? </h2>
+<p>6 Digit code vs 3 Digit code demonstration</p>
+<div id="display">
+    <div class="box" id="six-digit"> #FFCC00
 
+    </div>
+
+    <div class="box" id="three-digit"> #FC0
+
+    </div>
+</div>
+
+<h2>5.'background' and 'background-color' properties can produce the same output; why is this possible? </h2>
+<p> 'background' and 'background-color' properties can produce the same output; why is this possible?
+    background actually is a shorthand for<br>
+    background-color <br>
+    background-image<br>
+    background-position<br>
+    background-repeat<br>
+    background-attachment<br>
+    background-clip<br>
+    background-origin<br>
+    background-size<br>
+    Thus, besides the background-color, using the background shorthand you could also add one or more values without repeating any other background-* property more than once.</p>
 
 
 <h2>6. What is the 'a' in rgba? </h2>
@@ -45,8 +67,15 @@
 <div class="aquestion" id="ten">
     <p class= "pAQ">10%</p>
 </div>
+<div class="aquestion" id="thirty">
+    <p class= "pAQ">30%</p>
+</div>
 <div class="aquestion" id="fifty">
     <p class="pAQ">50%</p>
+</div>
+
+<div class="aquestion" id="eighty">
+    <p class="pAQ">80%</p>
 </div>
 
 <div class="aquestion" id="hundred">
@@ -57,6 +86,7 @@
 
 <h2> 7.What is the 'Digital Color Meter' on a Mac? How is the helpful? </h2>
 <p>The DigitalColor Meter is an application that comes installed with every Mac. Its primary use is to locate a color on your screen and provide the values of that color. Those colors can be provided as three different values such as RGB, Hexadecimal, and as a percentage.</p>
+<img src="img/Screen%20Shot%202022-08-30%20at%202.36.16%20PM.png">
 <br>
 
 
@@ -69,5 +99,7 @@
 <div id="radial">
 
 </div>
+<script src="js/color-properties.js"></script>
+<script> htmlBody.onclick = randomClickfunction;</script>
 </body>
 </html>
