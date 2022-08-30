@@ -10,10 +10,11 @@ h1 {
 }
 
 * {
+    background-image: url("../img/codeup-logo-with-codey.png");
     background-color: antiquewhite;
-    /*background-image: url("../img/white.jpeg");*/
     color: black;
-        font-family: Papyrus;
+    font-family: Papyrus ;
+    /*font-family: 'Qwitcher Grypen', cursive;*/
     background-repeat: no-repeat;
     background-size: cover;
     font-weight: bold;
