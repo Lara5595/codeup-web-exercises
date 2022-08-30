@@ -23,3 +23,7 @@ img {
 h1 {
     font-family: sans-serif;
 }
+
+#prices {
+    border-bottom: purple 1px solid;
+}
