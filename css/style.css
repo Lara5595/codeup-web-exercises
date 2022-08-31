@@ -10,14 +10,24 @@ h1 {
 }
 
 * {
-    background-image: url("../img/codeup-logo-with-codey.png");
-    background-color: antiquewhite;
     color: black;
     font-family: Papyrus ;
     /*font-family: 'Qwitcher Grypen', cursive;*/
     background-repeat: no-repeat;
     background-size: cover;
     font-weight: bold;
+}
+
+
+.background {
+    background-image: url("../img/codeup-logo-with-codey.png");
+    background-position: center center;
+    background-size: auto;
+    background-repeat: repeat;
+}
+
+#background {
+    background-color:rgb(255 255 255 / 73%);;
 }
 
 li {
