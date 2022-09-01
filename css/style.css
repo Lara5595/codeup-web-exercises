@@ -30,13 +30,28 @@ h1 {
     background-color:rgb(255 255 255 / 73%);;
 }
 
-li {
-    list-style-type: lower-roman;
+ul li {
+    list-style-type: armenian;
 }
 
 td, tr {
     padding: 5px;
     font-size: 30px;
+    margin: auto;
+    border: 1px black solid;
+}
+
+table {
+    margin: auto;
+    border: 2px black solid;
+}
+
+.product {
+text-align: center;
+}
+
+.middle {
+    text-align: center;
 }
 
 a:link {
