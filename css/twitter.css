@@ -94,7 +94,7 @@ line-height: 80px; /*added*/
 
 .profile-details {  /*added*/
     float: left;
-    margin 0 .5em;
+    margin: 0 .5em;
     width: calc(25% - .5em);
 
 }
@@ -103,8 +103,6 @@ line-height: 80px; /*added*/
     float: left;
     margin: 0 .5em;
     width: calc(50% - .5em);
-
-
 }
 
 .who-to-follow {    /*added*/
@@ -116,6 +114,7 @@ line-height: 80px; /*added*/
 
 .container {   /*added*/
     margin: 2em;
+    display: flex;
 }
 
 .media {   /*added*/
@@ -145,6 +144,7 @@ line-height: 80px; /*added*/
 
 .profile-items  { /*added*/
 list-style: none;
+    padding: 0;
 }
 
 .profile.entry { /*added*/
