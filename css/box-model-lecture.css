@@ -1,0 +1,7 @@
+#main {
+    box-sizing: border-box;
+    border: 2px solid gold;
+    width:400px;
+    padding: 15px;
+    margin: 15px;
+}
