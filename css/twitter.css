@@ -94,15 +94,60 @@ line-height: 80px; /*added*/
 
 .profile-details {  /*added*/
     float: left;
-    width: 25%;
+    margin 0 .5em;
+    width: calc(25% - .5em);
+
 }
 
 .timeline {       /*added*/
     float: left;
-    width: 50%;
+    margin: 0 .5em;
+    width: calc(50% - .5em);
+
+
 }
 
 .who-to-follow {    /*added*/
-    float: left;
-    width: 25%;
+    float: right;
+    width: calc(25% - .5em);
+    margin: 0 .5em;
+
 }
+
+.container {   /*added*/
+    margin: 2em;
+}
+
+.media {   /*added*/
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px black solid ;
+    padding: .5em;
+    overflow: auto;
+}
+
+.media-image {  /*added*/
+    max-width: 50px;
+    margin-top: 1.33em;
+    float: left;
+}
+
+.media-image { /*added*/
+    width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
+
+.media-body {   /*added*/
+    float: left;
+    width: calc(100% - 50px)
+}
+
+.profile-items  { /*added*/
+list-style: none;
+}
+
+.profile.entry { /*added*/
+    margin: .5em
+}
+
