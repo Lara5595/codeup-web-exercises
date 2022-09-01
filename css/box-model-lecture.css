@@ -1,7 +1,28 @@
+body {
+    margin: 20px;
+}
+
 #main {
     box-sizing: border-box;
     border: 2px solid gold;
-    width:400px;
+    width:500px;
     padding: 15px;
-    margin: 15px;
+    border-radius: 20px;
+    box-shadow: -10px -10px 7px darkslategray,
+        /* You can keep adding shadows*/     14px 14px 6px darkcyan;
+    margin-top: 75px ;
+    margin-left: 50px;
+}
+
+p {
+    box-sizing: border-box;
+    width: 350px;
+    border: 1px solid black;
+    border-radius: 7px;
+    /* 15 px top and buttom, 25 px left and right */
+    padding: 15px 25px;
+    /* This means top - right - bottom - left */
+    /*margin: 75px 100px 40px 40px;*/
+    margin: 0 auto;
+
 }
