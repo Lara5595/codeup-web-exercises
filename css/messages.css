@@ -9,8 +9,9 @@ body, html {
 .message {
     width: 800px;
     height: 20px;
-    border: 1px solid black;
+    border: 1px solid rgb(232,232,232);
     margin: 10px;
+    border-radius: 7px;
 }
 
 .message-info {
@@ -18,7 +19,7 @@ body, html {
     color: rgb(63, 56, 148);
     padding-left: 15px;
     padding-top: 8px;
-    border-radius: 10px;
+    padding-bottom: 8px;
 }
 
 .message-success {
@@ -26,7 +27,7 @@ body, html {
     color: rgb(101, 149, 110);
     padding-left: 15px;
     padding-top: 8px;
-    border-radius: 10px;
+    padding-bottom: 8px;
 }
 
 .message-warning {
@@ -34,7 +35,7 @@ body, html {
     color:rgb(156, 142, 68);
     padding-left: 15px;
     padding-top: 8px;
-    border-radius: 10px;
+    padding-bottom: 8px;
 }
 
 .message-error {
@@ -42,5 +43,5 @@ body, html {
     color: rgb(132, 55, 68);
     padding-left: 15px;
     padding-top: 8px;
-    border-radius: 10px;
+    padding-bottom: 8px;
 }
