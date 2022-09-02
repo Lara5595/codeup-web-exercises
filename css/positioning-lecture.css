@@ -12,3 +12,23 @@
     padding: 5px;
     margin: 1rem;
 }
+
+img {
+    position: absolute;
+    top: 0;
+    right: 0;
+/*    z index : -1 puts stop behind */
+
+}
+
+footer {
+    margin: auto;
+    width: 20%;
+}
+
+footer p {
+    text-align: center;
+    position: relative;
+    left: 5px;
+
+}
