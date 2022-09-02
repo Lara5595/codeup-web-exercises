@@ -32,3 +32,25 @@ footer p {
     left: 5px;
 
 }
+
+#quenya {
+    position: relative;
+}
+
+/*that means select the image with the attribute fish*/
+img[src*="fish"] {
+    position: absolute;
+    left: auto;
+    top: 0;
+}
+
+img[src="img/codeup-logo.png"] {
+    position: fixed;
+    top: 25%;
+    left: 0;
+    z-index: -1;
+}
+
+/*Position fixed keeps the div inplace when scrolling*/
+/*Position absolute literly moves the div where you want*/
+/*Position relative it position the div to where its at*/
