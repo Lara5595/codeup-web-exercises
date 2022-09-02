@@ -119,8 +119,8 @@ line-height: 80px; /*added*/
 
 .media {   /*added*/
     width: 100%;
-    background-color: white;
-    border-bottom: 1px black solid ;
+    background-color: var(--light-bg);
+    border-bottom: 1px var(--separator-color) solid ;
     padding: .5em;
     overflow: auto;
 }
@@ -148,6 +148,6 @@ list-style: none;
 }
 
 .profile.entry { /*added*/
-    margin: .5em
+    margin: 0.5em
 }
 
