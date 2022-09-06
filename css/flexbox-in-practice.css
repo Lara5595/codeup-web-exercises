@@ -1,0 +1,11 @@
+nav {
+    display: flex;
+    border: 1px solid black;
+
+}
+
+nav, a {
+    justify-content: flex-end;
+    padding: 10px;
+    margin: 10px;
+}
