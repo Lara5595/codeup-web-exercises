@@ -1,0 +1,28 @@
+.flexbox {
+    border: 1px solid black;
+    padding: 5px;
+    display: flex;
+    /*flex-direction: column-reverse;*/
+
+    /*flex-wrap: wrap-reverse; !* Makes it wrap so the box doesnt pass through*!*/
+    height: 70vh;
+/*    If you put a height on a column it wraps if you have flex wrap*/
+    flex-flow: row wrap;
+    /*justify-content defines the distribution of space along the main axis of the container*/
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+.flex-item {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.upsize {
+    font-size: 150%;
+}
+/*#4 has the class top-margin, but when you call the class and put it all of them get the margin.*/
+.top-margin {
+    margin-top: 30px;
+}
