@@ -3,14 +3,17 @@
     padding: 5px;
     display: flex;
     /*flex-direction: column-reverse;*/
-
     /*flex-wrap: wrap-reverse; !* Makes it wrap so the box doesnt pass through*!*/
-    height: 70vh;
+    /*height: 70vh;*/
+    /*height: 900px;*/
 /*    If you put a height on a column it wraps if you have flex wrap*/
     flex-flow: row wrap;
     /*justify-content defines the distribution of space along the main axis of the container*/
     justify-content: flex-start;
-    align-items: baseline;
+    /*align-items controls the alignment of flex items along the cross axis */
+    align-items: flex-start;
+/*    align-content is used to control how extra cross-axis space is distributed between and around flex lines. It applies only to containers with multiple flex lines.*/
+/*    align-content: space-around;*/
 }
 
 .flex-item {
@@ -25,4 +28,34 @@
 /*#4 has the class top-margin, but when you call the class and put it all of them get the margin.*/
 .top-margin {
     margin-top: 30px;
+}
+
+/*.three {*/
+/*    flex-grow: 2;*/
+/*}*/
+
+
+
+/*.five {*/
+/*    flex-grow: 0.5;*/
+/*}*/
+
+.one {
+    align-self: flex-end;
+    order: 0;
+/*    order 0 will make it be first after -1*/
+}
+
+.two {
+    align-self: center;
+}
+
+
+.four {
+align-self: center
+}
+
+.six {
+    align-self: flex-end;
+    order: -1; /*This make six be first*/
 }
