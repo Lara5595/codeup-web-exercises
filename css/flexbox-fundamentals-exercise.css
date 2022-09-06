@@ -107,7 +107,7 @@ section:nth-of-type(3) h3 {
     width: 5em;
     background: brown;
     /* enter needed declarations here */
-    flex: 1;
+    flex-grow: 1;
     justify-content: space-evenly;
 }
 
@@ -130,6 +130,7 @@ section:nth-of-type(6) {
     background: coral;
     height: 14em;
     /* enter needed declarations here */
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
