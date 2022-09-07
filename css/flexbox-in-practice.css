@@ -47,3 +47,22 @@ nav a:nth-of-type(4) {
 nav a:nth-of-type(2) {
     margin-left: auto;
 }
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section {
+    flex-direction: column;
+    display: flex;
+    border: 2px solid darkgray;
+    padding: 5px;
+    width: 330px;
+    margin: 10px;
+
+}
+
+section p {
+    flex-grow: 1;
+}
