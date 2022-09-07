@@ -2,6 +2,7 @@ nav {
     display: flex;
     background-color: rgb(193,193, 193);
     font-family: 'Work Sans', sans-serif;
+    height: 9vh;
 }
 
 nav * {
@@ -15,12 +16,15 @@ a {
     padding: 0.5em;
 }
 
-section:nth-of-type(2)
-{
+section:nth-of-type(2) {
     font-family: Montserrat, sans-serif;
     margin: auto;
     font-size: 3em;
     padding: 0.2em;
+    display: flex;
+    margin: auto;
+    position: relative;
+    bottom: 28px;
 }
 
 section:first-of-type {
@@ -39,4 +43,9 @@ section:last-of-type a {
     align-items: center;
     justify-content: center;
     align-self: center;
+}
+
+section {
+    display: flex;
+    justify-content: center;
 }
