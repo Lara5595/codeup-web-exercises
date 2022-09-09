@@ -1,0 +1,9 @@
+.hotpink {
+border: 1px solid hotpink;
+color: pink;
+}
+
+.hotpink:hover {
+    background-color: hotpink !important;
+    color: white !important;
+}
