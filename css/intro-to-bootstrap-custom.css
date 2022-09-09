@@ -7,3 +7,7 @@ color: pink;
     background-color: hotpink !important;
     color: white !important;
 }
+
+#main-heading {
+    background-image: url("../img/pexels-digital-buggu-171198.jpeg");
+}
