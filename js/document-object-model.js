@@ -27,3 +27,19 @@ accessTheDOM.innerHTML = accessTheDOM.innerHTML + " Animated Universe" // This c
 marvel.setAttribute('class', 'hotpink') // this makes classes with marvel become hot pink
 
 dc.setAttribute('class', 'blue')
+
+let hotPinks = document.getElementsByClassName('hotpink');
+// hotPinks[0].style.color = 'red';
+
+for (let i = 0; i < hotPinks.length; i++){
+    hotPinks[i].style.fontsize = "2em";
+}
+
+let submitButton = document.getElementById("colorSubmission")
+submitButton.onclick = function () {
+    let colorInput = document.getElementById("colorPreference")
+    let paragraphs = document.getElementsByTagName("p");
+    for (let i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].style.color = colorInput.value;
+    }
+}
