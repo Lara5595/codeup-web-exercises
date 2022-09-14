@@ -23,3 +23,7 @@ accessTheDOM.innerHTML = accessTheDOM.innerHTML + " Animated Universe" // This c
 
 // let marvel = document.getElementById("marvel"); This changes DC to marvel on html
 // accessTheDOM.innerHTML += marvel.innerHTML
+
+marvel.setAttribute('class', 'hotpink') // this makes classes with marvel become hot pink
+
+dc.setAttribute('class', 'blue')
