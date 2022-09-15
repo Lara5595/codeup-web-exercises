@@ -11,6 +11,7 @@ console.log(showMe); // consoles log DC
 
 
 let preference = "dc";
+
 let like = document.getElementById("like"); //create 2 variables
 let dontLike = document.getElementById("dontLike"); //^
 let output = `${dontLike.innerHTML} ${document.getElementById(preference).innerHTML} movies` // concatenate 2 variable
@@ -42,4 +43,33 @@ submitButton.onclick = function () {
     for (let i = 0; i < paragraphs.length; i++) {
         paragraphs[i].style.color = colorInput.value;
     }
+}
+
+// THE HULK JS
+let theHulk = document.getElementById("hulk");
+let hulkState = theHulk.getAttribute("data-state");
+// let hulkState = theHulk.dataset.state; ^another^ way^ is
+theHulk.innerText += " is in "  + hulkState + " state";
+// theHulk.innerText += ` is in ${hulkState} state`; this is another way to write it
+
+let hulkStrength = theHulk.dataset.strength;
+let hulkIntelligence = theHulk.dataset.intelligence;
+let hulkSummary = `The Hulk is in ${hulkState} state. His strength is ${hulkStrength} and his intelligence is ${hulkIntelligence}.`
+
+theHulk.innerText = hulkSummary
+
+// transform hulk
+let transformButton = document.getElementById("transformHulk");
+transformButton.onclick = function () {
+    let theHulk = document.getElementById("hulk")
+    let hulkState = theHulk.getAttribute("data-state");
+    let hulkStrength = theHulk.dataset.strength;
+    let hulkIntelligence = theHulk.dataset.intelligence;
+    if (hulkState === "hulk") {
+        theHulk.dataset.state = "Bruce Banner";
+    } else {
+        theHulk.dataset.state = "hulk";
+    }
+    theHulk.innerText = ` The Hulk is in ${hulkState} state.`
+
 }
