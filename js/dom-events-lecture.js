@@ -22,9 +22,12 @@ theButton.onclick = eventHandler;
 //     alert('you clicked me!');
 // });
 
-let alertSquare = document.getElementsByClassName("square");
-function squareHi() {
-    alert("Hi i am a square");
+
+// Make the square alert
+let theSquare = document.querySelector('.square');
+
+let theHandler = function () {
+    alert('I am a square');
 }
 
-alertSquare.onclick = eventHandler;
+theSquare.addEventListener('click', theHandler);
