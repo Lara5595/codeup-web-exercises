@@ -27,7 +27,29 @@ theButton.onclick = eventHandler;
 let theSquare = document.querySelector('.square');
 
 let theHandler = function () {
-    alert('I am a square');
+    alert('I am a square ' + 'and my color is ' + window.getComputedStyle(document.querySelector('.square'), null) .getPropertyValue('background-color'));
 }
 
-theSquare.addEventListener('click', theHandler);
+// theSquare.addEventListener('click', theHandler);
+theSquare.addEventListener('click', function (e) {
+    console.log(e.target.className);
+    console.log(getComputedStyle(e.target).backgroundColor);
+});
+
+
+
+
+// changes the text by clicking the button
+let changeP = document.getElementById('change-P');
+// let button1 = document.getElementById('btn'); works without this
+ let buttonP = function () {
+     changeP.innerText = 'It worked'
+ }
+ document.getElementById('btn').addEventListener('click',buttonP)
+
+
+
+// document.querySelector('body').addEventListener('mouseout', function (event){
+//     alert('free flashlight! Just sign up for email');
+//     console.log(getComputedStyle(event,))
+})
