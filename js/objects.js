@@ -201,7 +201,7 @@ function createBook(title,firstName,lastName) {
 //
 // books.push(new Book("1984", "George", "Orwell"));
 
-
+//^^ use this function for project coffee
 
 function showBookInfo(book, index) {
     console.log("Title: " + book.title);
