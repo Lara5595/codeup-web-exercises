@@ -215,3 +215,5 @@ function showBookInfo(book, index) {
 }
 
 // Need to study for assigment
+
+// using notes for coffee project

@@ -29,6 +29,17 @@
 </p>
 <button id="btn4">Change 4</button>
 
+
+<p id="extra-test"> This is practice</p>
+<button id="btn5">extra</button>
+
+<p id="extra-test2">This is practice 2</p>
+<button id="btn6">extra2</button> <br><br>
+
+<button id="btn7">even or odd</button>
+
+
+
 <script>
     (function() {
         "use strict";
@@ -98,6 +109,36 @@
             }
 
             document.getElementById('btn4').addEventListener('click', buttonFour)
+
+
+        // button 5
+        let extra = document.getElementById("extra-test")
+        let extraButton = function () {
+            extra.innerHTML = "this is extra work";
+        }
+        document.getElementById('btn5').addEventListener('click', extraButton)
+
+    //   button 6
+        let extra2 = document.getElementById("extra-test2")
+        let extraButton2 = function () {
+            extra2.style.color = "red";
+        }
+        document.getElementById('btn6').addEventListener('click', extraButton2)
+
+
+        // button 7
+        // let odd = document.getElementById('btn7')
+        // let buttonClickFunction = function () {
+        //     counter++
+        //     console.log(counter);
+        //     if (counter % 2 === 0) {
+        //         document.querySelector('p').innerText = counter + " is an even number";
+        //     } else {
+        //         document.querySelector('p').innerText = counter + " is an odd number";
+        //     }
+        // }
+        // document.getElementById('btn7').addEventListener("click", buttonClickFunction)
+        //
 
 
 
