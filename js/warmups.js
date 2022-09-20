@@ -95,13 +95,13 @@ console.log(arraySum(numbericArray));
 
 //convertToObject("Intro to Programming", 20) returns {class: "Intro to Programming", students: 20}
 // This is a function expression
-const convertToObject = function (nameOfClass, numberOfStudents) {
-    return {
-        class: nameOfClass,
-        numberOfStudents: numberOfStudents
-    }
-}
-console.log(convertToObject("Intro to Programming", 20));
+// const convertToObject = function (nameOfClass, numberOfStudents) {
+//     return {
+//         class: nameOfClass,
+//         numberOfStudents: numberOfStudents
+//     }
+// }
+// console.log(convertToObject("Intro to Programming", 20));
 
 // convertToObject as a arrow function
 // const convertToObject = (nameOfClass, numberOfStudents) => {
@@ -115,53 +115,53 @@ console.log(convertToObject("Intro to Programming", 20));
 
 // Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable if the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
 
-const neighborhood1 ={
-    neighborhood: "Lovely Estates",
-    medianHomePrice: 280000,
-    pool: true,
-    tennis: false,
-    crimeRate: "low",
-    schools: [
-        {name: "ES1", rating: 8},
-        {name: "MS2", rating: 6},
-        {name: "HS3", rating: 8}
-    ]
-}
-
-const neighborhood2 ={
-    neighborhood: "Luminous Estates",
-    medianHomePrice: 270000,
-    pool: true,
-    tennis: false,
-    crimeRate: "low",
-    schools: [
-        {name: "ES1", rating: 8},
-        {name: "MS2", rating: 8},
-        {name: "HS3", rating: 8}
-    ]
-}
-
-const neighborhood3 ={
-    neighborhood: "Ginormous Ego Estates",
-    medianHomePrice: 350000,
-    pool: true,
-    tennis: true,
-    crimeRate: "low",
-    schools: [
-        {name: "ES1", rating: 9},
-        {name: "MS2", rating: 9},
-        {name: "HS3", rating: 9}
-    ]
-}
-
-function desirableNeighborhood(neighborhoodObject) {
-        let total = 0;
-        for (let i = 0; i < neighborhoodObject.schools.length; i++) {
-            total += neighborhoodObject.schools[i].rating;
-        }
-
-    return neighborhoodObject.medianHomePrice < 300000 && neighborhoodObject.crimeRate === "low";
-}
+// const neighborhood1 ={
+//     neighborhood: "Lovely Estates",
+//     medianHomePrice: 280000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "ES1", rating: 8},
+//         {name: "MS2", rating: 6},
+//         {name: "HS3", rating: 8}
+//     ]
+// }
+//
+// const neighborhood2 ={
+//     neighborhood: "Luminous Estates",
+//     medianHomePrice: 270000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "ES1", rating: 8},
+//         {name: "MS2", rating: 8},
+//         {name: "HS3", rating: 8}
+//     ]
+// }
+//
+// const neighborhood3 ={
+//     neighborhood: "Ginormous Ego Estates",
+//     medianHomePrice: 350000,
+//     pool: true,
+//     tennis: true,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "ES1", rating: 9},
+//         {name: "MS2", rating: 9},
+//         {name: "HS3", rating: 9}
+//     ]
+// }
+//
+// function desirableNeighborhood(neighborhoodObject) {
+//         let total = 0;
+//         for (let i = 0; i < neighborhoodObject.schools.length; i++) {
+//             total += neighborhoodObject.schools[i].rating;
+//         }
+//
+//     return neighborhoodObject.medianHomePrice < 300000 && neighborhoodObject.crimeRate === "low";
+// }
 
 
 
@@ -184,15 +184,15 @@ function desirableNeighborhood(neighborhoodObject) {
 
 // so i need the totalCost accumulator variable and some kind of level variable that keeps track of what level i'm one  and i need to keep looping until totalCost > bonus
 
-function beeramid(bonus,price) {
-    let totalCost = 0;
-    let levels = 0;
-    while (totalCost < bonus) {
-        totalCost += levels * levels * price;
-        levels++;
-    }
-    return levels;
-}
+// function beeramid(bonus,price) {
+//     let totalCost = 0;
+//     let levels = 0;
+//     while (totalCost < bonus) {
+//         totalCost += levels * levels * price;
+//         levels++;
+//     }
+//     return levels;
+// }
 
 
 
@@ -224,19 +224,82 @@ function beeramid(bonus,price) {
 
 
 // this loops through the array and breaks when it reaches 5
-for (i = 0; i < 11; i++) {
-    console.log(i);
-    if (i == 5) {
-        break
-    }
-}
+// for (i = 0; i < 11; i++) {
+//     console.log(i);
+//     if (i == 5) {
+//         break
+//     }
+// }
 
 // this loops through the function and jumpt to the next iteration
-for (i = 0; i < 10; i++) {
-    if (i == 5) {
+// for (i = 0; i < 10; i++) {
+//     if (i == 5) {
+//
+//         continue
+//             ;
+//     }
+//     console.log(i);
+// }
+//
 
-        continue
-            ;
-    }
-    console.log(i);
+
+// warm ups for assessment
+
+const attendance = {
+    miami: 32789,
+    buffalo: 45678,
+    portland: 24567
 }
+
+// Given the attendance object, write a function that returns the total attendance across all teams
+
+function totalAttendace(attendanceObject) {
+    let attendanceArray = Object.values(attendanceObject);
+    let total = 0;
+    attendanceArray.forEach(function (attendance) {
+        total += attendance
+    });
+    return total;
+}
+
+// or
+
+//
+// function totalAttendace(attendanceObject) {
+//     let attendanceArray = Object.values(attendanceObject);
+//     let total = 0;
+//    for (let i = 0; i < attendanceArray.length; i++){
+//        total += attendanceArray[i];
+//    }
+//    return total;
+// }
+
+
+// Given the attendance object, write a function that returns the average attendance
+function averageAttendance(attendaceOject) {
+    let total = 0;
+    for (const prop in attendance) {
+        total += attendance[prop];
+    }
+    return total/Object.keys(attendance).length;
+}
+
+
+
+// Given the attendance object, write a function that returns an object with totalAttendance and averageAttendance properties set to the correct values
+
+function createObject(attendanceForBoth) {
+    let total = 0;
+    for (const prop in attendance) {
+        total += attendance[prop];
+    }
+    return {
+        totalAttendace: total,
+        averageAttendance: total/Object.keys(attendance).length
+    }
+}
+
+
+/// more warm ups
+//Convert Address to Object
+// Write a function named convertAddressToObject that accepts a string that contains a street number (as a string) and street name separated by a space characters, and returns an object with properties streetNumber and streetName.
