@@ -300,6 +300,24 @@ function createObject(attendanceForBoth) {
 }
 
 
-/// more warm ups
-//Convert Address to Object
-// Write a function named convertAddressToObject that accepts a string that contains a street number (as a string) and street name separated by a space characters, and returns an object with properties streetNumber and streetName.
+// more warmups
+/**
+ * Convert Address to Object
+ * Write a function named convertAddressToObject that accepts a string that contains a street number (as a string) and street name separated by a space character, and returns an object with properties streetNumber and streetName.
+ *
+ * Examples
+ *
+ * >> convertAddressToObject('8646 Sunny Oaks') ➞ {streetNumber: '8646', streetName: 'Sunny Oaks'}
+ * >> convertAddressToObject('5408 Villa Nueva') ➞ {streetNumber: '5408', streetName: 'Villa Nueva'}
+ **/
+
+
+
+let address = "8646 Sunny Oaks ";
+
+function convertAddressToObject(addressString) {
+return {
+    streetNumber:addressString.substring(0, address.indexOf(' ')),
+    streetName: addressString(address.indexOf(' ') + 1)
+}
+}
