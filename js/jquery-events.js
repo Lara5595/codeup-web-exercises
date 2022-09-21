@@ -31,14 +31,14 @@ $(function (){       //    <---  doc.ready
 
 
 
-    // // this makes it so when we hover it goes to hotpink
-    $(".box").hover(function (){
-        $(this).css('background-color', 'hotpink');
-        },
-        // this function makes it so when we hover back it goes back to normal
-    function (){
-       $(this).css('background-color', 'unset');
-    });
+    // // // this makes it so when we hover it goes to hotpink
+    // $(".box").hover(function (){
+    //     $(this).css('background-color', 'hotpink');
+    //     },
+    //     // this function makes it so when we hover back it goes back to normal
+    // function (){
+    //    $(this).css('background-color', 'unset');
+    // });
 
         //or
         // if you have a class already in css that has a class on hotpink and it sets the color to hotpink you can use that class also
@@ -53,13 +53,26 @@ $(function (){       //    <---  doc.ready
     //     });
 
 
-    // keydown whenever we pressed a key on the keyboard it alertsn
+    // keydown whenever we pressed a key on the keyboard it alerts
     $(document).keydown(function (e){
         // alert("you just pressed a key down");
         console.log(e.originalEvent.key);
     })
 
 
+    /// toggle class
+
+    $(".box").hover(function (){
+            $(this).toggleClass('hotpink');
+        });
+
+
+    // difference between html and text is with text you only get the text and html you get the p tags
+    console.log($("div").text());
+    console.log($("div").html());
+
+    $("div").text("I can set the content like this");
+    $("div").html("<ul><li>Hi i am a list</li></ul></li>");
 
 
 });

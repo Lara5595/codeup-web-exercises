@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery FAQs</title>
+  <style>
+    .hidden {
+      visibility: hidden;
+    }
+
+  </style>
+</head>
+<body>
+<p>National Parks</p>
+<dl>
+  <dt>Yellowstone National Park</dt>
+  <dd class="invisible">yellow</dd>
+
+  <dt>Zion National Park</dt>
+  <dd class="invisible">Zion</dd>
+
+  <dt>Glacier National Park</dt>
+  <dd class="invisible">Glacier</dd>
+
+  <dt>Yosemite National Park</dt>
+  <dd class="invisible">Yosemite</dd>
+
+  <dt>Arches National Park</dt>
+  <dd class="invisible">Arches</dd>
+
+  <dt>Grand Canyon National Park</dt>
+  <dd class="invisible">Canyon</dd>
+
+  <dt>Grand Teton National Park</dt>
+  <dd class="invisible">Teton</dd>
+
+  <dt>Bryce Canyon National Park</dt>
+  <dd class="invisible">Bryce</dd>
+
+  <dt>Acadia National Park</dt>
+  <dd class="invisible">Acadia</dd>
+
+  <dt>Gardner National Park</dt>
+  <dd class="invisible">Gardner</dd>
+</dl>
+<a href="#" id="toggle">Click me to change</a>
+<script src="js/jquery-3.6.1.min.js"></script>
+<script src="js/jquery-events.js"></script>
+
+<script>
+//Create a new file named jquery_faq.html. Commit all changes to GitHub.
+//In a HTML structure, create a definition list containing 10 FAQs about national parks.
+//Add a class to all dd elements named invisible.
+//Create some CSS rules that sets elements with the invisible class to visibility: hidden;.
+
+// $('.invisible').css({
+//   'visibility': 'hidden'
+// });
+// or
+// $('.invisible').css('visibility', 'hidden');
+
+//Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.
+$(document).ready(function () {
+  $("#toggle").click(function (event) {
+    event.preventDefault()
+   $('.invisible').toggleClass('hidden')
+
+
+
+  });
+
+
+});
+
+
+
+</script>
+
+</body>
+</html>
