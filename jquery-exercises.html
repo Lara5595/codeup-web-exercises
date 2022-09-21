@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>jquery-exercises</title>
+    <link rel="stylesheet" href="jquery-exercises.css">
 </head>
 <body>
 <div id="container">
@@ -21,21 +22,21 @@
 
 
 <script>
-$(function() {
-    alert( 'The DOM has finished loading!' );
-     });
+// $(function() {
+//     alert( 'The DOM has finished loading!' );
+//      });
 
 //select an element by the id and alert contents
 // let contents = $("#l-itemOnId").html();
 // alert(contents);
 
 // Update the jQuery code to select and alert a different id.
-let updateContents = $("#container").html();
-alert(updateContents);
+// let updateContents = $("#container").html();
+// alert(updateContents);
 
 // Use the same id on 2 elements. How does this change the jQuery selection?
-let sameID = $("#sameIdOnTwo").html();
-alert(sameID);
+// let sameID = $("#sameIdOnTwo").html();
+// alert(sameID);
 
 // Remove the duplicate id. Each id should be unique on that page.
 // Remove your custom jQuery code from previous exercises.
@@ -69,6 +70,34 @@ $(combineSelectors).css({
   'background-color': '#FF0',
     'width' : 'fit-content'
  });
+
+
+
+// events assigments
+//Remove your custom jQuery code from previous exercises.
+// Add jQuery code that will change the background color of an h1 element when clicked.
+
+$("h1").click(function (){
+    $(this).css('background-color', 'hotpink');
+});
+
+// Make all paragraphs have a font size of 18px when they are double clicked.
+
+$("p").dblclick(function () {
+    $(this).css('font-size', '18px');
+});
+
+//Set all li text color to red when the mouse is hovering; reset to black when it is not.
+
+
+$("li").hover(function (){
+    $(this).css('color', 'red');
+},
+function (){
+    $(this).css('color', 'unset');
+});
+
+
 
 </script>
 
