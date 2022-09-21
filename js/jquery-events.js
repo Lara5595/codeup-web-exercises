@@ -53,5 +53,10 @@ $(function (){       //    <---  doc.ready
     //     });
 
 
+    // keydown whenever we pressed a key on the keyboard it alertsn
+    $(document).keydown(function (e){
+        // alert("you just pressed a key down");
+        console.log(e.originalEvent.key);
+    })
 
 });
