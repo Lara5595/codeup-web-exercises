@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf8">
   <title>Konami Code</title>
 </head>
 <body>
@@ -9,11 +10,20 @@
 <script src="js/jquery-3.6.1.min.js"></script>
 <script src="js/jquery-events.js"></script>
 <script>
-  "use strict";
-
-  $(document).keyup(function(event){
+  let code = "3838404037393739666513"
+  let userEntry = "";
+  $(document).keyup(function(event) {
+    userEntry += event.keyCode;
+    if (userEntry === code) {
+      alert("You have added 30 lives!")
+  // } else if (userEntry.length === 22 && userEntry !== code) {
+  //   userEntry = "";
+  }
     console.log(event.keyCode);
   });
+ // "↑ ↑ ↓ ↓ ← → ← → b a enter
+  // 38 38 40 40 37 39 37 39 66 65 13
+
 </script>
 </body>
 </html>
