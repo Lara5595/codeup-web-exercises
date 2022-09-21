@@ -1,13 +1,13 @@
 // the new $(document).ready
-$(function(){
-//      id selector to alter content
-    $("#library").text("jquery makes life easier");  // changes the text in html with id librabry
-//  get reference to content
-    console.log($("#library").text());
-});
+// $(function(){
+// //      id selector to alter content
+//     $("#library").text("jquery makes life easier");  // changes the text in html with id librabry
+// //  get reference to content
+//     console.log($("#library").text());
+// });
 
 // or
-// $("#library").text("jquery makes life easier");
+$("#library").text("jquery makes life easier");
 
 // or
 
