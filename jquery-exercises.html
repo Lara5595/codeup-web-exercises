@@ -5,12 +5,71 @@
     <title>jquery-exercises</title>
 </head>
 <body>
+<div id="container">
+<h1 class="hola">Hello</h1>
+<p class="paragraph1"> I am a paragraph</p>
+<ul>
+    <li class="codeup">I am listing items</li>
+    <li class="codeup">I am listing items#2</li>
+    <li id="codeup">I am listing items#3</li>
+    <li id="changeID">I have the same id</li>
+    <li id="sameIdOnTwo">I also have the same id</li>
+</ul>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+
 <script>
 $(function() {
     alert( 'The DOM has finished loading!' );
      });
+
+//select an element by the id and alert contents
+// let contents = $("#l-itemOnId").html();
+// alert(contents);
+
+// Update the jQuery code to select and alert a different id.
+let updateContents = $("#container").html();
+alert(updateContents);
+
+// Use the same id on 2 elements. How does this change the jQuery selection?
+let sameID = $("#sameIdOnTwo").html();
+alert(sameID);
+
+// Remove the duplicate id. Each id should be unique on that page.
+// Remove your custom jQuery code from previous exercises.
+// Update your code so that at least 3 different elements have the same class named codeup.
+//Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
+$(".codeup").css({
+    'color' : 'red',
+    'width' : '1px'
+});
+
+//Remove the class from one of the elements. Refresh and test that the border has been removed.
+// Give another element an id of codeup. Does this element get a border now? NO
+//Using jQuery, set the font-size of all li elements to 20px.
+$("li").css('font-size', '20px');
+
+//Craft selectors that highlight all the h1, p, and li elements.
+// $("h1, p, li").css('background-color', '#FF0');
+
+// $("h1, p, li").css({
+//     'background-color': '#FF0',
+//     'width' : 'fit-content'
+// });
+
+// Create a jQuery statement to alert the contents of your h1 element(s).
+let h1Content = $('h1').html();
+alert(h1Content);
+
+// Combine your selectors that highlight all the h1, p, and li elements.
+let combineSelectors = $('h1, p, li')
+$(combineSelectors).css({
+  'background-color': '#FF0',
+    'width' : 'fit-content'
+ });
+
 </script>
 
 
