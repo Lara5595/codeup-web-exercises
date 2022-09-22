@@ -3,12 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Intro to AJAX</title>
+  <style>
+    #murals-info {
+      margin: 10px auto;
+      border: 5px ridge blueviolet;
+      padding: 15px;
+      width: 25%;
+      text-align: center;
+    }
+    #murals-info:hover {
+      cursor: pointer;
+      background-color: aliceblue;
+    }
+  </style>
 </head>
 <body>
+<section id="murals-info">
+  <p>Murals Information</p>
+</section>
+<section id="murals-cards">
+
+</section>
 
 <script src="js/jquery-3.6.1.min.js"></script>
 <script>
-  $.ajax()
+  $("#murals-info").on('click', function (){
+    $.ajax("data/murals.json").done(function (data){
+      data.forEach(function (mural){
+        // console.log(mural);
+        // console.log(mural.artwork_title ? mural.artwork_title : "untitled");
+        //this is the same as the one above but shorter
+        console.log(mural.artwork_title ?? "untitled");
+        console.log(mural.artist_credit);
+        let title = mural.artwork_title ?? "undefined";
+        // this outputs the credits of the array when clicking the button. code bottom
+        $("#murals-cards").append(
+                `<article class="card">
+                 <p>${title}</p>
+                <p>${mural.artist_credit}</p>
+                 </article>`
+        )
+      });
+    });
+  });
+
+
 </script>
 </body>
 </html>
