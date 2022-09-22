@@ -107,7 +107,7 @@ $(document).ready(function () {
 //Under the FAQ, add 3 unordered lists like above. Each list should contain a national park name in an h3 element, and a ul of 4 facts about the park.
 //Create a button that, when clicked, makes the last li in each ul have a yellow background.
 $("button").click(function (){
-  $("ul").last().css("background-color", "yellow");
+  $("ul li:last-child").css("background-color", "yellow");
   });
 
 //When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
@@ -121,7 +121,8 @@ $("li").click(function (){
   $("li").parent().first().css("color", "blue");
 })
 
-//Create 3 divs that each look like a picture frame. Each one should have a unique background image and a button underneath that swaps the image from the frame. Use the traversing functions of jQuery to accomplish this.
+// Bonus
+// Create 3 divs that each look like a picture frame. Each one should have a unique background image and a button underneath that swaps the image from the frame. Use the traversing functions of jQuery to accomplish this.
 
 
 
