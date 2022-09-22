@@ -37,6 +37,11 @@ $(function (){
         $(this).next().slideToggle();
     })
 
+    // .parent
+    $("header p").hover(function (){
+        $(this).parent().toggleClass("darkMode");
+    })
+
 
 
 });
