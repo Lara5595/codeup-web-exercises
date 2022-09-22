@@ -2,12 +2,15 @@
 <html>
 <head>
     <title>Online Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
 </head>
 <body>
+<div class="container-fluid my-4 bg-light rounded-3 py-4 px-0 " id="main-heading" style="background-image: url('img/tools.jpeg'); height: 346px" >
+<h1 class="display-2 text-center bg-light bg-opacity-75 my-8">My Tool Store</h1>
+</div>
 
-<h1>My Tool Store</h1>
-
-<table id="products">
+<table id="products" class="table table-hover">
     <thead>
         <tr>
             <th>Title</th>
@@ -18,7 +21,7 @@
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
-<button>Click To Buy!!!</button>
+<button type="button" class="btn btn-primary btn-lg btn-block">Click to buy</button>
 <script src="js/jquery-3.6.1.min.js"></script>
 <script>
 (function() {
