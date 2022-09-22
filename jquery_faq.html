@@ -46,9 +46,35 @@
   <dt>What is the largest national park site? Smallest?</dt>
   <dd class="invisible">Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres
     Smallest: Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres</dd><br>
-</dl>
+  <a href="#" id="toggle">Click me to change</a>
 
-<a href="#" id="toggle">Click me to change</a>
+</dl> <br><br><br>
+
+
+<h3>Denali National Park</h3>
+<ul>
+  <li>DNP is home to the highest peak in North America, Denali. Called "The High One" in language of the Athabascan tribe, this towering peak stands at 20,320 feet above sea level.</li>
+  <li>The year of 1910 marked the first time that anyone had successfully summited Denali. It was a group of local residents who celebrated with hot chocolate and donuts.</li>
+  <li>Sable Pass inside DNP is known to be the best area to spot massive grizzly bears.</li>
+  <li>There are 169 different bird species, 39 mammal species, 14 fish species, and one species of amphibian known in Denali, whilst the park is also home to 1,500 species of vascular plants, lichens and mosses.</li>
+</ul>
+<h3>Yellowstone National Park</h3>
+<ul>
+  <li>World's First National Park.</li>
+  <li>A designated World Heritage Site and designated Biosphere Reserve.</li>
+  <li>3,472 square miles or 8,987 square km.</li>
+  <li>96 % in Wyoming and 3 % in Montana.</li>
+</ul>
+<h3>Yosemite National Park</h3>
+<ul>
+  <li>El Capitan is the largest granite monolith in the world. It rises more than 3,000 feet above the valley floor and is a favorite for experienced rock climbers.</li>
+  <li>Yosemite Falls: This is the tallest waterfall in North America. Snow runoff cascades down the 2,425 foot drop, with peak flow in May. In winter, an ice cone is often visible at the top of the falls.</li>
+  <li>Giant Sequoias and Mariposa Grove: Mariposa Grove contains about 500 mature giant sequoias. </li>
+  <li>There are 840 miles of trails to hike in Yosemite National Park</li>
+</ul>
+<button>li-yellow</button>
+
+
 <script src="js/jquery-3.6.1.min.js"></script>
 <script src="js/jquery-events.js"></script>
 
@@ -71,6 +97,27 @@ $(document).ready(function () {
    $('.invisible').toggleClass('hidden')
   });
 
+
+
+
+// jquery traversing assigment
+
+//Under the FAQ, add 3 unordered lists like above. Each list should contain a national park name in an h3 element, and a ul of 4 facts about the park.
+//Create a button that, when clicked, makes the last li in each ul have a yellow background.
+$("button").click(function (){
+  $("ul").last().css("background-color", "yellow");
+  });
+
+//When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+$("h3").click(function (){
+  $("ul").children().css("font-weight", "bold");
+})
+
+  // When any list item is clicked, first li of the parent ul should have a font color of blue.
+
+$("li").click(function (){
+  $("li").parent().first().css("color", "blue");
+})
 
 });
 
