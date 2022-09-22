@@ -18,19 +18,42 @@
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
-
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
+<button>Click To Buy!!!</button>
+<script src="js/jquery-3.6.1.min.js"></script>
 <script>
 (function() {
     "use strict";
     // TODO: Create an AJAX GET request for the file under data/inventory.json
 
-    // TODO: Take the data from inventory.json and append it to the products table
+
+        // TODO: Take the data from inventory.json and append it to the products table
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
+
+        $.ajax("data/inventory.json").done(function (data){
+            data.forEach(function(tool){
+                //console.log(tool);
+                let rowTemplate = `
+                  <tr>
+                    <td>${tool.title}</td>
+                    <td>${tool.quantity}</td>
+                    <td>${tool.price}</td>
+                    <td>${tool.categories}</td>
+                  </tr>
+                   `;
+                $("#insertProducts").append(rowTemplate);
+            });
+        });
+//     extra codeeee
+
+    const minecraft = new Audio("sounds/Death sound in Minecraft.mp3");
+    $('button').click(e => minecraft.play());
+
+
 })();
+
+
 </script>
 
 </body>
