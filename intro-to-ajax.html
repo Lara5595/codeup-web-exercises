@@ -15,6 +15,19 @@
       cursor: pointer;
       background-color: aliceblue;
     }
+
+    #murals-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      border: 2px solid darkgray;
+      padding: 5px;
+      width: 330px;
+    }
   </style>
 </head>
 <body>
@@ -37,7 +50,7 @@
         console.log(mural.artist_credit);
         let title = mural.artwork_title ?? "undefined";
         // this outputs the credits of the array when clicking the button. code bottom
-        $("#murals-cards").append(
+        $("#murals-cards").append(    // this creates an output in html
                 `<article class="card">
                  <p>${title}</p>
                 <p>${mural.artist_credit}</p>
