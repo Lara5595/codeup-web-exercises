@@ -16,5 +16,13 @@
             "sugar"
         ],
         "date": "February 14, 2015"
-    }
+    }, {
+    "title": "The Third Post",
+    "content" : "Pizza am I right",
+    "categories": [
+        "family",
+        "italian"
+    ],
+    "date": "May 5, 1995"
+}
 ]

@@ -7,10 +7,61 @@
 
 </head>
 <body>
-<div id="posts">
+<!--nav bar starts-->
+<nav class="navbar bg-light">
+    <div class="container d-flex justify-content-center">
+        <a class="navbar-brand" href="#">
+            <img src="img/Food%20lovers-1.png" alt="Bootstrap" width="120" height="120">
+        </a>
+    </div>
+</nav>
+<!--nav ends-->
+<div id="posts" class="row d-flex justify-content-center">
+<!--    <table id="products" class="table table-hover">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th>Title</th>-->
+<!--            <th>Content</th>-->
+<!--            <th>Categories</th>-->
+<!--            <th>Date</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody id="posts"></tbody>-->
+<!--    </table>-->
+
 
 </div>
 
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        (function() {
+            $.ajax("data/blog.json").done(function (data) {
+                data.forEach(function (blog) {
+                    let rowTemplate = `
+                 <div class="card m-5" style="width: 18rem;">
+                 <img src="..." class="card-img-top" alt="...">
+                    <div class="col">
+  <div class="card-body ">
+    <h5 class="card-title">${blog.title}</h5>
+    <p class="card-text" data-spy="scroll">${blog.content}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">${blog.categories}</li>
+    <li class="list-group-item">${blog.date}</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+</div>
+                   `;
+                    $("#posts").append(rowTemplate);
+                });
+            });
+        })();
 
+
+    </script>
 </body>
 </html>
