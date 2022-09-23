@@ -51,3 +51,7 @@ function reverseGeocode(coordinates, token) {
             return data.features[0].place_name;
         });
 }
+
+
+// gives you the cordinates in the console
+geocode("600 Navarro St #600, San Antonio, TX 78205", MAPBOX_API_TOKEN).then(function(result){console.log(result)})
