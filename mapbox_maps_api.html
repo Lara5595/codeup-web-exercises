@@ -25,6 +25,7 @@
     <div id='map' class="mx-auto mt-4"></div>
 </div>
 
+<script src="js/jquery-3.6.1.min.js"></script>
 
 <script>
 <!--    this creates map-->
@@ -70,6 +71,49 @@ const favoriteResPopup = new mapboxgl.Popup()    // this let you add a popup to 
 favoriteResMarker.setPopup(favoriteResPopup);
 
 // Refactor your code to display at least three of your favorite restaurants with information about each. Create an array of objects with information about each restaurant to accomplish this. Use a .forEach() loop rather than a for loop.
+// restaurant 2
+const favoriteResMarker2 = new mapboxgl.Marker()   // this adds a marker to the ap
+    .setLngLat([-98.541055, 29.35728])
+    .addTo(map);
+
+const favoriteResPopup2 = new mapboxgl.Popup()    // this let you add a popup to the map
+    .setHTML('<p class="mt-3" style="width: 100px">Texas Roadhouse</p>');
+favoriteResMarker2.setPopup(favoriteResPopup2);
+
+// restaurant 3
+const favoriteResMarker3 = new mapboxgl.Marker()   // this adds a marker to the ap
+    .setLngLat([-98.499152, 29.440015])
+    .addTo(map);
+
+const favoriteResPopup3 = new mapboxgl.Popup()    // this let you add a popup to the map
+    .setHTML('<p class="mt-3" style="width: 100px">MCDS</p>');
+favoriteResMarker3.setPopup(favoriteResPopup3);
+
+let restaurants = [
+    {
+        "Name": "Whataburger",
+        "Categories": "Burgers",
+        "Coordinates": "-98.488782, 29.4237"
+    },
+
+    {
+        "Name": "Texas Roadhouse",
+        "Categories": "Steak",
+        "Coordinates": "-98.499152, 29.440015"
+    },
+    {
+        "Name": "McDonalds",
+        "Categories": "Burgers",
+        "Coordinates": "-98.499152, 29.440015"
+    }
+]
+
+
+    restaurants.forEach(function(){
+
+    });
+
+
 
 
 </script>
