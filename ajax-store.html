@@ -24,6 +24,7 @@
 <div class="d-flex justify-content-center ">
 <button type="button" class="btn btn-primary btn-lg btn-block d-flex justify-content-center align-content-center align-items-center w-100 mx-5">Click to buy</button>
 </div>
+<!--<button class="load-inventory">Add</button>-->
 <script src="js/jquery-3.6.1.min.js"></script>
 <script>
 (function() {
@@ -57,6 +58,24 @@
     const minecraft = new Audio("sounds/Death sound in Minecraft.mp3");
     $('button').click(e => minecraft.play());
 
+        // add inventory
+        // $("button").on('click', () => load-inventory());
+
+    // this will log you need to order when its inventory is low
+    // let lowestQuantity;
+    // for (let i = 0; i<data.length; i++){
+    //     if (i === 0) {
+    //         lowestQuantity = data[i].quantity;
+    //     }
+    //     if (data[i].quantity < lowestQuantity) {
+    //         lowestQuantity = data[i].quantity;
+    //     }
+    // }
+    // for (let i =0;i < data.length; i++){
+    //     if (data[i].quantity === lowestQuantity) {
+    //         console.log("You need to reorder " + data[i].title);
+    //     }
+    // };
 
 })();
 
