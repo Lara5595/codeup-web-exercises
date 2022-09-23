@@ -44,7 +44,7 @@
                     <td>${tool.title}</td>
                     <td>${tool.quantity}</td>
                     <td>$${tool.price}</td>
-                    <td>${tool.categories}</td>
+                    <td>${tool.categories.join(', ')}</td>
                   </tr>
                    `;
                 $("#insertProducts").append(rowTemplate);
