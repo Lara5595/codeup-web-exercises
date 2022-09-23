@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Mapbox Lecture</title>
+    <script src="js/keys.js"></script>  <!-- this hides your keys -->
+<!--    this is a link for mapbox library-->
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
 <!--    boostrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<!--    geocoder.js link-->
+    <script src="js/mapbox-geocoder-utils.js"></script>
 
     <style>
      #map {
@@ -27,9 +31,8 @@
     <input type="text" name="zoom" id="zoom" class="my-2">
     <button id="zoomSubmit">Submit</button>
 </form>
-
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZGF2aWQ1NTk1IiwiYSI6ImNsOGVwcWxpMjAwaGQzb3IweGhxdTMzdWQifQ.nw5ThU4V56qpAqsdf-25Lw';
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;  //we gave our token a var MAPBOX on keys.js
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
@@ -42,11 +45,22 @@
 
     });
     map.setZoom(7)
-    map.setCenter([-99.5076, 27.5036]);
-    document.getElementById("zoomSubmit").addEventListener('click', function (e){
+    map.setCenter([-99.48962, 29.42692]);
+    document.getElementById("zoomSubmit").addEventListener('click', function (e){  // this lets you put a zoom
         e.preventDefault();
         map.setZoom(document.getElementById("zoom").value)
     })
+
+    const codeupMarker = new mapboxgl.Marker()   // this adds a marker to the ap
+        .setLngLat([-98.48962, 29.42692])
+    .addTo(map);
+
+    const codeupPopup = new mapboxgl.Popup()    // this let you add a popup to the map
+        .setHTML('<p class="mt-3" style="width: 100px">Codeup</p>');
+        codeupMarker.setPopup(codeupPopup)
+    ;
+
+
 </script>
 
 </body>
