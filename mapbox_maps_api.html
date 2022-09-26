@@ -71,23 +71,7 @@ map.setZoom(5)
 // favoriteResMarker.setPopup(favoriteResPopup);
 
 // Refactor your code to display at least three of your favorite restaurants with information about each. Create an array of objects with information about each restaurant to accomplish this. Use a .forEach() loop rather than a for loop.
-// restaurant 2
-// const favoriteResMarker2 = new mapboxgl.Marker()   // this adds a marker to the map
-//     .setLngLat([-98.541055, 29.35728])
-//     .addTo(map);
-//
-// const favoriteResPopup2 = new mapboxgl.Popup()    // this let you add a popup to the map
-//     .setHTML('<p class="mt-3" style="width: 100px">Texas Roadhouse</p>');
-// favoriteResMarker2.setPopup(favoriteResPopup2);
-//
-// // restaurant 3
-// const favoriteResMarker3 = new mapboxgl.Marker()   // this adds a marker to the ap
-//     .setLngLat([-98.499152, 29.440015])
-//     .addTo(map);
-//
-// const favoriteResPopup3 = new mapboxgl.Popup()    // this let you add a popup to the map
-//     .setHTML('<p class="mt-3" style="width: 100px">MCDS</p>');
-// favoriteResMarker3.setPopup(favoriteResPopup3);
+
 
 let restaurants = [
     {
@@ -117,12 +101,12 @@ let restaurants = [
 
 
     restaurants.forEach(function(value){
-    let newMarker = new mapboxgl.Marker()
-        .setLngLat(value.Coordinates)
-        .addTo(map);
-    let newPop = new mapboxgl.Popup()
-        .setHTML(`<p class="mt-3" style="width: 250px;">${value.Name}</p>`);
-        newMarker.setPopup(newPop);
+    let newMarker = new mapboxgl.Marker()  // this is the function what we use to add a marker
+        .setLngLat(value.Coordinates)    // setLngLat adds the coordinates and value.coor gets coor from array
+        .addTo(map);                    // addTo adds it to the map
+    let newPop = new mapboxgl.Popup()           // this is the function we used to add a popup
+        .setHTML(`<p class="mt-3" style="width: 250px;">${value.Name}, ${value.Categories}</p>`); // set Html adds it to html
+        newMarker.setPopup(newPop);        //  this adds a popup to  the map
     });
 
 
