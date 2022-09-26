@@ -53,5 +53,5 @@ function reverseGeocode(coordinates, token) {
 }
 
 
-// gives you the cordinates in the console
-geocode("600 Navarro St #600, San Antonio, TX 78205", MAPBOX_API_TOKEN).then(function(result){console.log(result)})
+// gives you the coordinates in the console
+// geocode("600 Navarro St #600, San Antonio, TX 78205", MAPBOX_API_TOKEN).then(function(result){console.log(result)})
