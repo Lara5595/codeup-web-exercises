@@ -16,7 +16,7 @@ $(function (){
         return n;
     }
 
-    const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
     function formatTime(timeStamp){
         let dateTime = new Date(timeStamp * 1000);
@@ -69,21 +69,24 @@ $(function (){
         return cardinalDirection;
     }
 
+    // weather
+    // $.get("http://api.openweathermap.org/data/2.5/weather", {
+    //     APPID: OPEN_WEATHER_APPID,
+    //     lat: 29.423017,
+    //     lon: -98.48527,
+    //     units: "imperial"
+    // }).done(function(data) {
+    //     console.log(data);
+    //     console.log(data.main.temp);
+    //     console.log(data.wind.speed);
+    //     console.log(windCardinalDirection(data.wind.deg));
+    //     $('body').append(`<p>The current temperature is ${data.main.temp}</p>`)
+    // });
+    //weather ^^^^
 
-    $.get("http://api.openweathermap.org/data/2.5/weather", {
-        APPID: OPEN_WEATHER_APPID,
-        lat: 29.423017,
-        lon: -98.48527,
-        units: "imperial"
-    }).done(function(data) {
-        console.log(data);
-        console.log(data.main.temp);
-        console.log(data.wind.speed);
-        console.log(windCardinalDirection(data.wind.deg));
-        $('body').append(`<p>The current temperature is ${data.main.temp}</p>`)
-    });
 
 
+    // forecast
     // $.get("http://api.openweathermap.org/data/2.5/forecast", {
     //     APPID: OPEN_WEATHER_APPID,
     //     lat:    29.423017,
@@ -98,5 +101,46 @@ $(function (){
     //         }
     //     })
     // });
+//  forecast ^^
+
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    function namedDayFromDay(timeStamp){
+        let dateTime = new Date(timeStamp * 1000);
+        return daysOfWeek[dateTime.getDay()];
+    }
+
+
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        APPID: OPEN_WEATHER_APPID,
+        lat:    29.423017,
+        lon:   -98.48527,
+        units: "imperial"
+    }).done(function(data) {
+        data.list.forEach((forecast, index) => {
+            if (index < 1 ) {
+                console.log('5 day forecast', data);
+
+                $('body').append(`<p>Temperature ${data.list[0].main.temp}</p>
+                                    <p>Date${data.list[0].dt_txt}</p>
+                                     <p>Description${data.list[0]}</p>`)
+
+                $('body').append(`<p>Temperature ${data.list[8].main.temp}</p>
+                                    <p>Date${data.list[8].dt_txt}</p>`)
+
+                $('body').append(`<p>Temperature ${data.list[16].main.temp}</p>
+                                    <p>Date${data.list[16].dt_txt}</p>`)
+
+                $('body').append(`<p>Temperature ${data.list[24].main.temp}</p>
+                                    <p>Date${data.list[24].dt_txt}</p>`)
+
+                $('body').append(`<p>Temperature ${data.list[32].main.temp}</p>
+                                    <p>Date${data.list[32].dt_txt}</p>`)
+
+            }
+        })
+    });
+
+
 
 })
