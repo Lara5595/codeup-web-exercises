@@ -126,8 +126,8 @@ $(function (){
         console.log(data.list[0].weather[0].description)
         data.list.forEach((forecast, i) => {
             if(i % 8 == 0) {
-                $(`#cards`).append(`<div class="card"></div> <p> Current date ${data.list[i].dt_txt}</p>
-                 <p>The current temperature is ${data.list[i].main.temp}</p>`);
+                $(`#cards`).append(`<div class="card col-2"> <p> Current date ${data.list[i].dt_txt}</p>
+                 <p>The current temperature is ${data.list[i].main.temp}</p></div>`);
             }
                 // //day 1
                 // $('#tbody').append(`<div class="card"> <p>Temperature ${data.list[0].main.temp}</p>
