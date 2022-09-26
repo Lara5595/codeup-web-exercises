@@ -20,10 +20,22 @@
     </style>
 </head>
 <body>
+<!--Nav-->
 <nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">Navbar</span>
+    <span class="navbar-brand mb-0 h1">Weather App</span>
+    <span class="navbar-brand">Current city:</span>
 </nav>
+<!--^^-->
 
+<!--button-->
+<div class="input-group">
+    <label class="form-label m-2 me-4" for="form1">Place</label>
+    <div class="form-outline">
+        <input type="search" id="form1" class="form-control" />
+    </div>
+    <button type="button" class="btn btn-primary ms-4"> Find</button>
+</div>
+<!--^^-->
 <!--cards container-->
 <div class="container-fluid row mt-3 justify-content-center" id="cards"></div>
 <!--^^^ -->

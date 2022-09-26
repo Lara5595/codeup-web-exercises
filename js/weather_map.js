@@ -129,26 +129,6 @@ $(function (){
                 $(`#cards`).append(`<div class="card col-2"> <p> Current date ${data.list[i].dt_txt}</p>
                  <p>The current temperature is ${data.list[i].main.temp}</p></div>`);
             }
-                // //day 1
-                // $('#tbody').append(`<div class="card"> <p>Temperature ${data.list[0].main.temp}</p>
-                //                     <p>Date ${data.list[0].dt_txt}</p>
-                //                      <p>Description: ${data.list[0].weather[0].description}</p> </div>`)
-                // // //day2
-                // $('#tbody').append(`<div class="card"> <p>Temperature ${data.list[8].main.temp}</p>
-                //                     <p>Date${data.list[8].dt_txt}</p>
-                // <p>Description: ${data.list[8].weather[0].description}</p></div>`)
-                // // //day3
-                // $('#tbody').append(`<div class="card"> <p>Temperature ${data.list[16].main.temp}</p>
-                //                     <p>Date${data.list[16].dt_txt}</p>
-                // <p>Description: ${data.list[16].weather[0].description}</p></div>`)
-                // // //day4
-                // $('#tbody').append(`<div class="card"> <p>Temperature ${data.list[24].main.temp}</p>
-                //                     <p>Date${data.list[24].dt_txt}</p>
-                // <p>Description: ${data.list[24].weather[0].description}</p></div>`)
-                // // //day5
-                // $('#tbody').append(`<div class="card"> <p>Temperature ${data.list[32].main.temp}</p>
-                //                     <p>Date${data.list[32].dt_txt}</p>
-                //  <p>Description: ${data.list[32].weather[0].description}</p></div>`)
 
 
 
