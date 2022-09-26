@@ -1,12 +1,18 @@
 $(function (){
 
-    // $.get("http://api.openweathermap.org/data/2.5/onecall", {
-    //     APPID: OPEN_WEATHER_APPID,
-    //     lat: 29.423017,
-    //     lon: -98.48527
-    // }).done(function(data) {
-    //     console.log(data);
-    // });
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;  //we gave our token a var MAPBOX on keys.js
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+        center: [-74.5, 40], // starting position [lng, lat]
+        zoom: 9, // starting zoom
+        projection: 'globe' // display the map as a 3D globe
+    });
+    map.on('style.load', () => {
+        map.setFog({}); // Set the default atmosphere style
+
+    });
+    map.setCenter([-99.48962, 29.42692]);
 
     // date format
     function appendLeadingZeroes(n){
@@ -117,29 +123,39 @@ $(function (){
         lon:   -98.48527,
         units: "imperial"
     }).done(function(data) {
-        data.list.forEach((forecast, index) => {
-            if (index < 1 ) {
-                console.log('5 day forecast', data);
-
-                $('body').append(`<p>Temperature ${data.list[0].main.temp}</p>
-                                    <p>Date${data.list[0].dt_txt}</p>
-                                     <p>Description${data.list[0]}</p>`)
-
-                $('body').append(`<p>Temperature ${data.list[8].main.temp}</p>
-                                    <p>Date${data.list[8].dt_txt}</p>`)
-
-                $('body').append(`<p>Temperature ${data.list[16].main.temp}</p>
-                                    <p>Date${data.list[16].dt_txt}</p>`)
-
-                $('body').append(`<p>Temperature ${data.list[24].main.temp}</p>
-                                    <p>Date${data.list[24].dt_txt}</p>`)
-
-                $('body').append(`<p>Temperature ${data.list[32].main.temp}</p>
-                                    <p>Date${data.list[32].dt_txt}</p>`)
-
+        console.log(data.list[0].weather[0].description)
+        data.list.forEach((forecast, i) => {
+            if(i % 8 == 0) {
+                $(`#cards`).append(`<div class="card"></div> <p> Current date ${data.list[i].dt_txt}</p>
+                 <p>The current temperature is ${data.list[i].main.temp}</p>`);
             }
+                // //day 1
+                // $('#tbody').append(`<div class="card"> <p>Temperature ${data.list[0].main.temp}</p>
+                //                     <p>Date ${data.list[0].dt_txt}</p>
+                //                      <p>Description: ${data.list[0].weather[0].description}</p> </div>`)
+                // // //day2
+                // $('#tbody').append(`<div class="card"> <p>Temperature ${data.list[8].main.temp}</p>
+                //                     <p>Date${data.list[8].dt_txt}</p>
+                // <p>Description: ${data.list[8].weather[0].description}</p></div>`)
+                // // //day3
+                // $('#tbody').append(`<div class="card"> <p>Temperature ${data.list[16].main.temp}</p>
+                //                     <p>Date${data.list[16].dt_txt}</p>
+                // <p>Description: ${data.list[16].weather[0].description}</p></div>`)
+                // // //day4
+                // $('#tbody').append(`<div class="card"> <p>Temperature ${data.list[24].main.temp}</p>
+                //                     <p>Date${data.list[24].dt_txt}</p>
+                // <p>Description: ${data.list[24].weather[0].description}</p></div>`)
+                // // //day5
+                // $('#tbody').append(`<div class="card"> <p>Temperature ${data.list[32].main.temp}</p>
+                //                     <p>Date${data.list[32].dt_txt}</p>
+                //  <p>Description: ${data.list[32].weather[0].description}</p></div>`)
+
+
+
+
         })
     });
+
 
 
 
