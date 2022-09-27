@@ -1,5 +1,5 @@
 $(function (){
-
+// This creates the map
     mapboxgl.accessToken = MAPBOX_API_TOKEN;  //we gave our token a var MAPBOX on keys.js
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -13,6 +13,7 @@ $(function (){
 
     });
     map.setCenter([-99.48962, 29.42692]);
+// ^^
 
     // date format
     function appendLeadingZeroes(n){
@@ -93,20 +94,20 @@ $(function (){
 
 
     // forecast
-    $.get("http://api.openweathermap.org/data/2.5/forecast", {
-        APPID: OPEN_WEATHER_APPID,
-        lat:    29.423017,
-        lon:   -98.48527,
-        units: "imperial"
-    }).done(function(data) {
-        console.log(data)
-        console.log(data.city.population);
-        data.list.forEach((forecast, index) => {
-            if (index < 5){
-                console.log(forecast);
-            }
-        })
-    });
+    // $.get("http://api.openweathermap.org/data/2.5/forecast", {
+    //     APPID: OPEN_WEATHER_APPID,
+    //     lat:    29.423017,
+    //     lon:   -98.48527,
+    //     units: "imperial"
+    // }).done(function(data) {
+    //     console.log(data)
+    //     console.log(data.city.population);
+    //     data.list.forEach((forecast, index) => {
+    //         if (index < 5){
+    //             console.log(forecast);
+    //         }
+    //     })
+    // });
 //  forecast ^^
 
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -116,7 +117,7 @@ $(function (){
         return daysOfWeek[dateTime.getDay()];
     }
 
-
+    // This makes the cards
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: OPEN_WEATHER_APPID,
         lat:    29.423017,
@@ -124,18 +125,73 @@ $(function (){
         units: "imperial"
     }).done(function(data) {
         console.log(data.list[0].weather[0].description)
+        // logg current city name
+        $("#currentCity").text(`Current City: ${data.city.name}`);
+
+
         data.list.forEach((forecast, i) => {
             if(i % 8 == 0) {
-                $(`#cards`).append(`<div class="card col-2 mx-3"> <p> Current date ${data.list[i].dt_txt.split(" ")[0]}</p>
-                 <p>The current temperature is ${data.list[i].main.temp}</p>
-                 <p>Description: ${data.list[i].weather[0].description}</p>
-                 <p>Humidity: ${data.list[i].main.humidity}</p>
-                 <p>Wind: ${data.list[i].wind.speed}</p>
-                 <p>Preassure: ${data.list[i].main.pressure}</p></div>  `);
+                $(`#cards`).append(`<div class="card-header col-2 mx-2 border"> <p class="date">${data.list[i].dt_txt.split(" ")[0]}</p>
+                 <p class="temp">The current temperature is ${data.list[i].main.temp}</p>
+                 <p class="description">Description: ${data.list[i].weather[0].description}</p>
+                 <p class="humidity">Humidity: ${data.list[i].main.humidity}</p>
+                 <p class="wind">Wind: ${data.list[i].wind.speed}</p>
+                 <p class="preassure">Preassure: ${data.list[i].main.pressure}</p></div>  `);
             }
 
         })
     });
+    // ^
+
+    // I got this function from mapbox lecture and it helps you make your button find a place
+            document.getElementById("setMarkerButton").addEventListener('click', function (e) {
+                e.preventDefault();
+                const address = document.getElementById("form1").value;
+                geocode(address, MAPBOX_API_TOKEN).then(function (coordinates) {
+                    console.log(coordinates);
+                    const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+                    map.setCenter(coordinates);
+                    updateWeather(coordinates);
+                });
+            })
+
+// ^^^
+
+
+
+
+
+
+    function printWeather(data){
+                $(`#cards`).empty();
+        data.list.forEach((forecast, i) => {
+            if(i % 8 == 0) {
+                $(`#cards`).append(`<div class="card col-2 mx-1"> <p> Current date ${data.list[i].dt_txt.split(" ")[0]}</p>
+                 <p>The current temperature is ${data.list[i].main.temp}</p>
+                 <p>Description: ${data.list[i].weather[0].description}</p>
+                 <p>Humidity: ${data.list[i].main.humidity}</p>
+                 <p>Wind: ${data.list[i].wind.speed}</p>
+                 <p>Preassure: ${data.list[i].main.pressure}</p></div> `);
+            }
+        });
+    }
+
+
+
+    function updateWeather(coordinates){
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: OPEN_WEATHER_APPID,
+            lat: coordinates[1],
+            lon: coordinates[0],
+            units: "imperial"
+        }).done(function (data){
+            $("#currentCity").text(`Current City: ${data.city.name}`);
+
+            printWeather(data);
+
+        })
+    }
+
 
 
 

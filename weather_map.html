@@ -12,39 +12,41 @@
     <script src="js/keys.js"></script>
     <!--    geocoder.js link-->
     <script src="js/mapbox-geocoder-utils.js"></script>
-    <style>
-        #map {
-            height: 300px;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="weather_map.css">
+
 </head>
 <body>
 <!--Nav-->
 <nav class="navbar navbar-light bg-light">
     <span class="navbar-brand mb-0 h1">Weather App</span>
-    <span class="navbar-brand">Current city:</span>
+    <span class="navbar-brand" id="currentCity">Current city:</span>
 </nav>
 <!--^^-->
-
-<!--button-->
-<div class="input-group">
-    <label class="form-label m-2 me-4" for="form1">Place</label>
-    <div class="form-outline">
-        <input type="search" id="form1" class="form-control" />
-    </div>
-    <button type="button" class="btn btn-primary ms-4"> Find</button>
-</div>
-<!--^^-->
-<!--cards container-->
-<div class="container-fluid row mt-3 justify-content-center" id="cards"></div>
-<!--^^^ -->
 
 <!-- container for map -->
 <div class="container row mx-auto">
     <div id='map' class="mx-auto mt-4"></div>
 </div>
 <!--^^-->
+
+
+
+
+<!--cards container-->
+<div class="container-fluid row mt-3 justify-content-center" id="cards"></div>
+<!--^^^ -->
+
+<!--button search-->
+<div class="input-group justify-content-center">
+    <label class="form-label m-2 me-4" for="form1">Place</label>
+    <div class="form-outline">
+        <input type="search" id="form1" class="form-control" />
+    </div>
+    <button type="button" class="btn btn-primary ms-4" id="setMarkerButton"> Find</button>
+</div>
+<!--^^-->
+
+
 <script src="js/jquery-3.6.1.min.js"></script>
 <script src="js/weather_map.js"></script>
 
