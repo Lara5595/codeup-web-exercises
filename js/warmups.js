@@ -93,23 +93,23 @@ console.log(arraySum(numbericArray));
 
 // Write a function called convertToObject that takes in a string that is the name of a class, and a number that is the number of students, and returns an object with the properties `class` and `students`
 
-//convertToObject("Intro to Programming", 20) returns {class: "Intro to Programming", students: 20}
+convertToObject("Intro to Programming", 20) returns {class: "Intro to Programming", students: 20}
 // This is a function expression
-// const convertToObject = function (nameOfClass, numberOfStudents) {
-//     return {
-//         class: nameOfClass,
-//         numberOfStudents: numberOfStudents
-//     }
-// }
+const convertToObject = function (nameOfClass, numberOfStudents) {
+    return {
+        class: nameOfClass,
+        numberOfStudents: numberOfStudents
+    }
+}
 // console.log(convertToObject("Intro to Programming", 20));
 
 // convertToObject as a arrow function
-// const convertToObject = (nameOfClass, numberOfStudents) => {
-//     return {
-//         class: nameOfClass,
-//         numberOfStudents: numberOfStudents
-//     }
-// }
+const convertToObject = (nameOfClass, numberOfStudents) => {
+    return {
+        class: nameOfClass,
+        numberOfStudents: numberOfStudents
+    }
+}
 
 
 

@@ -93,20 +93,20 @@ $(function (){
 
 
     // forecast
-    // $.get("http://api.openweathermap.org/data/2.5/forecast", {
-    //     APPID: OPEN_WEATHER_APPID,
-    //     lat:    29.423017,
-    //     lon:   -98.48527,
-    //     units: "imperial"
-    // }).done(function(data) {
-    //     console.log(data)
-    //     console.log(data.city.population);
-    //     data.list.forEach((forecast, index) => {
-    //         if (index < 5){
-    //             console.log(forecast);
-    //         }
-    //     })
-    // });
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        APPID: OPEN_WEATHER_APPID,
+        lat:    29.423017,
+        lon:   -98.48527,
+        units: "imperial"
+    }).done(function(data) {
+        console.log(data)
+        console.log(data.city.population);
+        data.list.forEach((forecast, index) => {
+            if (index < 5){
+                console.log(forecast);
+            }
+        })
+    });
 //  forecast ^^
 
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -126,12 +126,11 @@ $(function (){
         console.log(data.list[0].weather[0].description)
         data.list.forEach((forecast, i) => {
             if(i % 8 == 0) {
-                $(`#cards`).append(`<div class="card col-2"> <p> Current date ${data.list[i].dt_txt}</p>
-                 <p>The current temperature is ${data.list[i].main.temp}</p></div>`);
+                $(`#cards`).append(`<div class="card col-2"> <p> Current date ${data.list[i].dt_txt.split(" ")[0]}</p>
+                 <p>The current temperature is ${data.list[i].main.temp}</p>
+                 <p>Description: ${data.list[i].weather[0].description}</p>
+                 <p>Humidity: ${data.list[i].main.humidity}</p></div>  `);
             }
-
-
-
 
         })
     });
