@@ -1,17 +1,50 @@
 $(function (){
+
 // This creates the map
     mapboxgl.accessToken = MAPBOX_API_TOKEN;  //we gave our token a var MAPBOX on keys.js
     const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
-        center: [-74.5, 40], // starting position [lng, lat]
-        zoom: 9, // starting zoom
-        projection: 'globe' // display the map as a 3D globe
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-99.48962, 29.42692],
+        zoom: 2
     });
-    map.on('style.load', () => {
-        map.setFog({}); // Set the default atmosphere style
 
-    });
+
+    // I got the code from  https://docs.mapbox.com/mapbox-gl-js/example/drag-a-marker/ that creates a draggable marker
+    const marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([-99.48962, 29.42692])
+        .addTo(map);
+
+    function onDragEnd() {
+        const lngLat = marker.getLngLat();
+        coordinates.style.display = 'block';
+        coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+         // created coords so we can call it on updateWeather
+         let coords = [
+             `${lngLat.lng}`,
+             `${lngLat.lat}`
+         ]
+        updateWeather(coords)
+
+    }
+
+    // This changes  the type of map
+    const layerList = document.getElementById('menu');
+    const inputs = layerList.getElementsByTagName('input');
+
+    for (const input of inputs) {
+        input.onclick = (layer) => {
+            const layerId = layer.target.id;
+            map.setStyle('mapbox://styles/mapbox/' + layerId);
+        };
+    }
+    //^^
+
+
+
+    marker.on('dragend', onDragEnd);
     map.setCenter([-99.48962, 29.42692]);
 // ^^
 
@@ -128,14 +161,13 @@ $(function (){
         // logg current city name
         $("#currentCity").text(`Current City: ${data.city.name}`);
 
-
         data.list.forEach((forecast, i) => {
             if(i % 8 == 0) {
                 $(`#cards`).append(`<div class="card-header col-2 mx-2 border"> <p class="date">${data.list[i].dt_txt.split(" ")[0]}</p>
-                 <p class="temp">The current temperature is ${data.list[i].main.temp}</p>
-                 <p class="description">Description: ${data.list[i].weather[0].description}</p>
-                 <p class="humidity">Humidity: ${data.list[i].main.humidity}</p>
-                 <p class="wind">Wind: ${data.list[i].wind.speed}</p>
+                 <p class="temp"><img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png"><br> ${data.list[i].main.temp}&#8457 / ${data.list[i].main.temp}&#8457;</p><hr>
+                 <p class="description">Description: ${data.list[i].weather[0].description}</p><hr>
+                 <p class="humidity">Humidity: ${data.list[i].main.humidity}</p><hr>
+                 <p class="wind">Wind: ${data.list[i].wind.speed}</p><hr>
                  <p class="preassure">Preassure: ${data.list[i].main.pressure}</p></div>  `);
             }
 
@@ -143,7 +175,7 @@ $(function (){
     });
     // ^
 
-    // I got this function from mapbox lecture and it helps you make your button find a place
+    // I got this function from mapbox lecture and it helps you make your button to find a place
             document.getElementById("setMarkerButton").addEventListener('click', function (e) {
                 e.preventDefault();
                 const address = document.getElementById("form1").value;
@@ -161,23 +193,23 @@ $(function (){
 
 
 
-
+// This creates new cards for when you search a new place
     function printWeather(data){
                 $(`#cards`).empty();
         data.list.forEach((forecast, i) => {
             if(i % 8 == 0) {
-                $(`#cards`).append(`<div class="card col-2 mx-1"> <p> Current date ${data.list[i].dt_txt.split(" ")[0]}</p>
-                 <p>The current temperature is ${data.list[i].main.temp}</p>
-                 <p>Description: ${data.list[i].weather[0].description}</p>
-                 <p>Humidity: ${data.list[i].main.humidity}</p>
-                 <p>Wind: ${data.list[i].wind.speed}</p>
-                 <p>Preassure: ${data.list[i].main.pressure}</p></div> `);
+                $(`#cards`).append(`<div class="card-header col-2 mx-2 border"> <p class="date">${data.list[i].dt_txt.split(" ")[0]}</p>
+                 <p class="temp"><img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png"><br>${data.list[i].main.temp}&#8457 / ${data.list[i].main.temp}&#8457;</p><hr>
+                 <p class="description">Description: ${data.list[i].weather[0].description}</p><hr>
+                 <p class="humidity">Humidity: ${data.list[i].main.humidity}</p><hr>
+                 <p class="wind">Wind: ${data.list[i].wind.speed}</p><hr>
+                 <p class="preassure">Preassure: ${data.list[i].main.pressure}</p></div>  `);
             }
         });
     }
 
 
-
+// this updates current city
     function updateWeather(coordinates){
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             APPID: OPEN_WEATHER_APPID,
@@ -191,6 +223,8 @@ $(function (){
 
         })
     }
+
+
 
 
 
