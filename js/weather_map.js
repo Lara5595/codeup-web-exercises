@@ -195,6 +195,7 @@ $(function (){
 
         })
     });
+
     // ^
 
     // I got this function from mapbox lecture and it helps you make your button to find a place
