@@ -6,7 +6,8 @@ $(function (){
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-99.48962, 29.42692],
-        zoom: 2
+        zoom: 2,
+        projection: 'globe'
     });
 
 
@@ -29,6 +30,8 @@ $(function (){
         updateWeather(coords)
 
     }
+    marker.on('dragend', onDragEnd);
+    map.setCenter([-99.48962, 29.42692]);
 
     // This changes  the type of map
     const layerList = document.getElementById('menu');
@@ -40,12 +43,31 @@ $(function (){
             map.setStyle('mapbox://styles/mapbox/' + layerId);
         };
     }
+
+    // zooms in to your location
+    map.on('style.load', () => {
+        map.setFog({}); // Set the default atmosphere style
+    });
+
+// Add geolocate control to the map.
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+// When active the map will receive updates to the device's location as it changes.
+            trackUserLocation: true,
+// Draw an arrow next to the location dot to indicate which direction the device is heading.
+            showUserHeading: true
+        })
+    );
+
+
     //^^
 
 
 
-    marker.on('dragend', onDragEnd);
-    map.setCenter([-99.48962, 29.42692]);
+
 // ^^
 
     // date format
