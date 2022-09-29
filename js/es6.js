@@ -136,12 +136,11 @@ let list = '';
 
 // TODO: rewrite the following loop to use a for..of loop
 // developers.forEach(function (developer) {
-for (let listItems of developers) {
+for (let element of developers) {
 
     // TODO: rewrite the assignment below to use template strings
     // list += '<li>' + developer + '</li>';
-    list += `<ul> <li>${listItems}</li> </ul>`;
-    console.log(listItems)
+    list += `<ul> <li>${element}</li> </ul>`;
 };
 // list += '</ul>';
 $("#output").append(list);
