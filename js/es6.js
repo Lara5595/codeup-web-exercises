@@ -1,14 +1,35 @@
+/// lecture
+// syntax for methods:
+// do not use arrow functions in methods, they have no *this* binding
 
+const Test = {
+    name: "Javier",
+    oldSyntax: function(){
+        console.log("This works");
+    },
+    outputName: ()=>{
+        console.log(this.name);
+    },
+    output(){
+        console.log("Does this work?");
+    }
+}
 
+Test.oldSyntax();
+Test.output();
+Test.outputName();
 
+let listItems = document.getElementsByTagName('li');
+// this doesn't work: can't use forEach on a nodeList
+// listItems.forEach(listItem => console.log(listItem));
 
+for (let listItem of listItems){
+    console.log(listItem);
+}
 
+console.log(document.getElementsByTagName('ul')[0]);
 
-
-
-
-
-
+document.getElementsByTagName("li")[2].nextElementSibling.innerHTML = "Change anything, the DOM belongs to you!";
 
 
 // Assignment
