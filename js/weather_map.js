@@ -1,6 +1,6 @@
 $(function (){
 
-// This creates the map
+    // This creates the map
     mapboxgl.accessToken = MAPBOX_API_TOKEN;  //we gave our token a var MAPBOX on keys.js
     const map = new mapboxgl.Map({
         container: 'map',
@@ -33,7 +33,7 @@ $(function (){
     marker.on('dragend', onDragEnd);
     map.setCenter([-99.48962, 29.42692]);
 
-    // This changes  the type of map
+    // This changes  the type of map part of mapbox
     const layerList = document.getElementById('menu');
     const inputs = layerList.getElementsByTagName('input');
 
@@ -44,12 +44,12 @@ $(function (){
         };
     }
 
-    // zooms in to your location
+    // zooms in to your location part of mapbox
     map.on('style.load', () => {
         map.setFog({}); // Set the default atmosphere style
     });
 
-// Add geolocate control to the map.
+// Add geolocate control to the map. part of mapbox
     map.addControl(
         new mapboxgl.GeolocateControl({
             positionOptions: {
