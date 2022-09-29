@@ -198,7 +198,7 @@ $(function (){
 
     // ^
 
-    // I got this function from mapbox lecture and it helps you make your button to find a place
+    // I got this function from mapbox lecture and it helps make your button find a place
             document.getElementById("setMarkerButton").addEventListener('click', function (e) {
                 e.preventDefault();
                 const address = document.getElementById("form1").value;
