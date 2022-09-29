@@ -56,7 +56,7 @@ const name = 'your_name_here';
 const email = '';
 const languages = [];
 
-// TODO: rewrite the object literal using object property shorthand
+// TODO: rewrite the object literal using object property shorthand - done
 // users.push({
 //     name: name,
 //     email: email,
@@ -77,6 +77,8 @@ let names = [];
 users.forEach(function(user) {
     return emails.push(user.email);
 });
+
+
 users.forEach(function(user) {
     return names.push(user.name);
 });
