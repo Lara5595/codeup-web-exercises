@@ -242,4 +242,4 @@ console.log(`The total years of experience is ${totalYears}`);
 // 6. Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
 
-// need to finish 5 and 6
+// need to finish 5 and 6 and need to do resume
