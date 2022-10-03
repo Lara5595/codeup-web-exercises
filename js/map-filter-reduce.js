@@ -446,9 +446,9 @@ console.log(dogsNamedLexis);
 
 // TODO 6: using filter, create a new array containing only dogs that are trained and younger than 10
 console.log('Exercise 6:');
-const dogsTrainedAndYounger = dogs.filter(dog => dog.age < 10 && dog.isTrained == "true");
-
+const dogsTrainedAndYounger = dogs.filter((dog) => dog.age < 10 && dog.isTrained == true);
 console.log(dogsTrainedAndYounger)
+
 
 // REDUCE
 // TODO 7: using reduce, return a string containing all dog names together with no spaces ("BubblesLexieDoggy...")
