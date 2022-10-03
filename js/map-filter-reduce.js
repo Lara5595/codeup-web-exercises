@@ -410,7 +410,7 @@ console.log(dogNames);
 // let dogNames = dogs.map(function (dog){
 //     return dog.dogName
 // })
-console.log(dogNames)
+// console.log(dogNames)
 
 // TODO 2: using map, create a new array of dog ages from the dogs array
 console.log('Exercise 2:');
@@ -419,18 +419,18 @@ console.log(dogAges);
 
 // TODO 3: using map, create a new array of dog objects from the dogs array that only have dog names and age properties and values
 console.log('Exercise 3:');
-let newDogsArray = dogs.map(dog => {
-    delete dog.isTrained
-    return dog
-})
-console.log(newDogsArray)
+// let newDogsArray = dogs.map(dog => {
+//     delete dog.isTrained
+//     return dog
+// })
+// console.log(newDogsArray)
 
-let dogsValues = dogs.map(dog => {
-    dog.values = 'new property'
-    return dog
-})
+// let dogsValues = dogs.map(dog => {
+//     dog.values = 'new property'
+//     return dog
+// })
 
-console.log(dogsValues)
+// console.log(dogsValues)
 
 // FILTER
 // TODO 4: using filter, create a new array containing only dogs younger than 10 years old
@@ -446,16 +446,37 @@ console.log(dogsNamedLexis);
 
 // TODO 6: using filter, create a new array containing only dogs that are trained and younger than 10
 console.log('Exercise 6:');
-// const dogsTrainedAndYounger = dogs.filter(dog => dog.age < 10 && dog.isTrained == "true");
-// console.log(dogsTrainedAndYounger)
+const dogsTrainedAndYounger = dogs.filter(dog => dog.age < 10 && dog.isTrained == "true");
+
+console.log(dogsTrainedAndYounger)
 
 // REDUCE
 // TODO 7: using reduce, return a string containing all dog names together with no spaces ("BubblesLexieDoggy...")
 console.log('Exercise 7:');
+let dogNamesTogether = dogs.reduce((acc, element) =>{
+    return element.dogName + acc;
+}, " ")
+console.log(dogNamesTogether)
+
 // TODO 8: using reduce, return the total of adding all dog ages together (18)
 console.log('Exercise 8:');
+let dogAgesTogether = dogs.reduce((acc, dog, index) =>{
+    if (index ==(dogs.length - 1)) {
+        acc + parseInt(dog.age);
+    }
+    return  acc + parseInt(dog.age)
+    }, 0)
+console.log(dogAgesTogether)
+
 // TODO 9: using reduce, return an array of dog objects with all isTrained properties set to true
 console.log('Exercise 9:');
+let allDogsTrained = dogs.reduce((acc, dog) => {
+    dog.isTrained
+    acc.push(dog);
+    return acc;
+}, []);
+console.log(allDogsTrained)
+
 // EXTRA CHALLENGES
 // TODO 10: what is the average age of each dog?
 console.log('Exercise 10:');
@@ -463,7 +484,18 @@ console.log('Exercise 10:');
 console.log('Exercise 11:');
 // TODO 12: what is the average length of names of untrained dogs?
 console.log('Exercise 12:');
+
 // TODO 13: what are the combined ages of all dogs in dog years? (7x more than a human year)
 console.log('Exercise 13:');
+let dogAgesTogether2 = dogs.reduce((acc, dog, index) =>{
+    if (index ==(dogs.length - 1)) {
+        acc + parseInt(dog.age);
+        return (acc * 7);
+    }
+    else {}
+    return  acc + parseInt(dog.age)
+}, 0)
+console.log(dogAgesTogether2)
+
 // TODO 14: create a string of the first letters of each dog name for dogs three years old (should be "LF")
 console.log('Exercise 14:');
