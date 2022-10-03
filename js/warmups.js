@@ -444,9 +444,9 @@ $("button").on('click', function (){
 
 // Every time the user enters a character in the input with id "source", that
 // character appears in the <p> element with the id "output"
-$("#source").on("keydown", function (){
-    $("#source").val();
-})
+$("#source").on('keyup', function(){
+    $("#output").text($("#source").val());
+});
 
 
 
