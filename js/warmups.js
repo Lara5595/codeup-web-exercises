@@ -245,22 +245,22 @@ console.log(arraySum(numbericArray));
 
 // warm ups for assessment
 
-const attendance = {
-    miami: 32789,
-    buffalo: 45678,
-    portland: 24567
-}
+// const attendance = {
+//     miami: 32789,
+//     buffalo: 45678,
+//     portland: 24567
+// }
 
 // Given the attendance object, write a function that returns the total attendance across all teams
 
-function totalAttendace(attendanceObject) {
-    let attendanceArray = Object.values(attendanceObject);
-    let total = 0;
-    attendanceArray.forEach(function (attendance) {
-        total += attendance
-    });
-    return total;
-}
+// function totalAttendace(attendanceObject) {
+//     let attendanceArray = Object.values(attendanceObject);
+//     let total = 0;
+//     attendanceArray.forEach(function (attendance) {
+//         total += attendance
+//     });
+//     return total;
+// }
 
 // or
 
@@ -276,29 +276,29 @@ function totalAttendace(attendanceObject) {
 
 
 // Given the attendance object, write a function that returns the average attendance
-function averageAttendance(attendaceOject) {
-    let total = 0;
-    for (const prop in attendance) {
-        total += attendance[prop];
-    }
-    return total/Object.keys(attendance).length;
-}
-
+// function averageAttendance(attendaceOject) {
+//     let total = 0;
+//     for (const prop in attendance) {
+//         total += attendance[prop];
+//     }
+//     return total/Object.keys(attendance).length;
+// }
+//
 
 
 // Given the attendance object, write a function that returns an object with totalAttendance and averageAttendance properties set to the correct values
 
-function createObject(attendanceForBoth) {
-    let total = 0;
-    for (const prop in attendance) {
-        total += attendance[prop];
-    }
-    return {
-        totalAttendace: total,
-        averageAttendance: total/Object.keys(attendance).length
-    }
-}
-
+// function createObject(attendanceForBoth) {
+//     let total = 0;
+//     for (const prop in attendance) {
+//         total += attendance[prop];
+//     }
+//     return {
+//         totalAttendace: total,
+//         averageAttendance: total/Object.keys(attendance).length
+//     }
+// }
+//
 
 // more warmups
 /**
@@ -313,14 +313,14 @@ function createObject(attendanceForBoth) {
 
 
 
-let address = "8646 Sunny Oaks ";
-
-function convertAddressToObject(addressString) {
-return {
-    streetNumber:addressString.substring(0, addressString.indexOf(' ')),
-    streetName: addressString.substring(addressString.indexOf(' ') + 1)
-}
-}
+// let address = "8646 Sunny Oaks ";
+//
+// function convertAddressToObject(addressString) {
+// return {
+//     streetNumber:addressString.substring(0, addressString.indexOf(' ')),
+//     streetName: addressString.substring(addressString.indexOf(' ') + 1)
+// }
+// }
 
 // or
 
@@ -348,19 +348,19 @@ return {
  */
 
 
- let  peopleAndPets = [
-       {name: 'Fernando Mendoza', pets: 1},
-       {name: 'Douglas Hirsh', pets: 8},
-       {name: 'Kenneth Howell', pets: 2}
-        ]
-
-function totalPets(arrayOfObjects) {
-     let total = 0;
-     for (let i = 0; i < arrayOfObjects.length; i++){
-         total += arrayOfObjects[i].pets
-     }
-     return total;
-}
+//  let  peopleAndPets = [
+//        {name: 'Fernando Mendoza', pets: 1},
+//        {name: 'Douglas Hirsh', pets: 8},
+//        {name: 'Kenneth Howell', pets: 2}
+//         ]
+//
+// function totalPets(arrayOfObjects) {
+//      let total = 0;
+//      for (let i = 0; i < arrayOfObjects.length; i++){
+//          total += arrayOfObjects[i].pets
+//      }
+//      return total;
+// }
 
 // or
 
@@ -428,6 +428,25 @@ function totalPets(arrayOfObjects) {
 */
 
 
+/*================================ DOM WARMUPS =======================================*/
+
+// When the user clicks the button that has the text "Change Heading", the text of the <h2> element changes to read ' I pwn the DOM"
+// using jquery
+$("button").on('click', function (){
+    $("h1").text("I pwn the DOM");
+})
+
+// using javascript
+// document.getElementsByTagName("button")[0].addEventListener("click", function (e){
+//     document.getElementsByTagName("h1")[0].innerHTML = "I pwn the DOM";
+// })
+
+
+// Every time the user enters a character in the input with id "source", that
+// character appears in the <p> element with the id "output"
+$("#source").on("keydown", function (){
+    $("#source").val();
+})
 
 
 

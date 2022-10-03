@@ -1,44 +1,45 @@
-// const prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
-// // This loops prices in arrow syntax
-// // prices.forEach(price=> console.log(price));
+const prices1 = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+    // // This loops prices in arrow syntax
+
+// prices1.forEach(price=> console.log(price));
 // // this makes it output to the page i put a div on html
 // let output = '';
+
+                            // // element
+
+// prices1.forEach(price => {
+//     output += `<p>${price}</p>`
+//     console.log(output) // logs the output
+//     // this a jquery
+//     $("div").html(output);
+// });
 //
-// // element
+                            // // index
 //
-// // prices.forEach(price => {
-// //     output += `<p>${price}</p>`
-// //     console.log(output) // logs the output
-// //     // this a jquery
-// //     $("div").html(output);
-// // });
-//
-// // index
-//
-// // prices.forEach((price, index) => {
-// //     const tax = (price * 0.0825).toFixed(2);
-// //     const total = (price + parseFloat(tax)).toFixed(2);
-// //     output += `<p>Item number: ${index + 1}. Price: $${price}. Tax:
-// //      $${tax}. Total: $${total}.</p>`;
-// //     $("div").html(output);
-// // });
-//
-//
-// //array
-//
-// // prices.forEach((price, index, array) => {
-// //     const tax = (price * 0.0825).toFixed(2);
-// //     const total = (price + parseFloat(tax)).toFixed(2);
-// //     output += `<p>Item number: ${index + 1}. Price: $${price}. Tax:
-// //      $${tax}. Total: $${total}.</p>`;
-// //     $("div").html(output);
-// //     if (index === array.length-1) {
-// //         $("div").append("<p>That's It!!!</p>");
-// //     }
-// // });
+// prices1.forEach((price, index) => {
+//     const tax = (price * 0.0825).toFixed(2);
+//     const total = (price + parseFloat(tax)).toFixed(2);
+//     output += `<p>Item number: ${index + 1}. Price: $${price}. Tax:
+//      $${tax}. Total: $${total}.</p>`;
+//     $("div").html(output);
+// });
 //
 //
-// // .map
+                            // //array
+//
+// prices1.forEach((price, index, array) => {
+//     const tax = (price * 0.0825).toFixed(2);
+//     const total = (price + parseFloat(tax)).toFixed(2);
+//     output += `<p>Item number: ${index + 1}. Price: $${price}. Tax:
+//      $${tax}. Total: $${total}.</p>`;
+//     $("div").html(output);
+//     if (index === array.length-1) {
+//         $("div").append("<p>That's It!!!</p>");
+//     }
+// });
+//
+//
+                            // // .map
 //
 // const pricesAfterTax =  prices.map(price =>{
 //     const tax = (price * 0.0825).toFixed(2);
@@ -77,7 +78,7 @@
 //
 //
 //
-// // .map makes a new array
+                        // // .map makes a new array
 // const cars = [
 //     {
 //         make: "Honda",
@@ -126,10 +127,11 @@
 // // console.log(cars[0]);
 //
 //
-// // .map makes a new array ^^
+                        // // .map makes a new array ^^
 //
 //
-// // .filter
+                            // // .filter
+
 // const under10K = cars.filter(car => car.mileage < 10000);
 // // we are using object deconstruction   you can also add the index so it loop with numbers
 // under10K.forEach(({make, model, mileage}, index) => {
@@ -155,25 +157,99 @@
 //
 //
 //
-// // .reduce it reduces an array to one value
+                // // .reduce it reduces an array to one value ///////////////////////////////
 // // you need a accumulator and a element
-// const totalCost = prices.reduce(function (total, price){
-//     return total + price;
-// })
-//
-// // console.log(totalCost);
-//
-//
-//
-// // const prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
-//
-// // At index 0 it is like it does let total = array[0]
-//
-// let total = prices.reduce(function(total, itemPrice, index){
-//     console.log(`The index is ${index}, the total is ${total}, the itemPrice is ${itemPrice}`);
-//     return total + itemPrice;
-// });
-// $("#output").append(`<p>The total is ${totalCost}</p>`);
+
+const prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+
+const totalCost = prices.reduce(function (total, price){
+    return total + price;
+})
+
+console.log(totalCost);
+
+
+// At index 0 it is like it does let total = array[0]
+
+let total = prices.reduce(function(total, itemPrice, index){
+    console.log(`The index is ${index}, the total is ${total.toFixed(2)}, the itemPrice is ${itemPrice}`);
+    return total + itemPrice;
+});
+$("#output").append(`<p>The total is ${totalCost}</p>`);
+
+
+// The function passed to the reduce method takes an extra parameter, the accumulator is often abbreviated "acc"
+
+
+const averagePrice = prices.reduce((function (accumulator, current, index, array){
+    accumulator += current;
+    if (index === array.length -1) {
+        return accumulator/array.length;
+    }
+    return accumulator;
+}))
+
+
+const cars = [
+    {
+        make: "Honda",
+        model: "Civic",
+        mileage: 10428
+    },
+    {
+        make: "Toyota",
+        model: "Corolla",
+        mileage: 9425
+    },
+    {
+        make: "Ford",
+        model: "Mustang",
+        mileage: 2567
+    },
+    {
+        make: "Audi",
+        model: "A3",
+        mileage: 14500
+    },
+    {
+        make: "Mazda",
+        model: "3",
+        mileage: 11248
+    }
+];
+
+//                      This creates a array with the car mileages
+const mileages = cars.reduce((accumulator, car) =>{
+    accumulator.push(car.mileage);
+    return accumulator;
+}, []);
+console.log(mileages);
+
+
+//              This returns the highest mileage from the array
+const highestMileage = cars.reduce((accumulator, car, index, array) =>{
+    accumulator.push(car.mileage);
+    if (index === array.length -1){
+        return accumulator.sort(function (a, b){
+            return b-a
+        })[0];
+    }
+    return accumulator;
+}, []);
+console.log(highestMileage);
+
+
+// or
+const highestMileage2 = cars.reduce((accumulator, car, index, array) => {
+    accumulator.push(car.mileage);
+    return accumulator;
+    },[]).reduce((accumulator, mileage) => {
+    return Math.max(accumulator, mileage);
+    });
+console.log(highestMileage);
+
+
+
 
 
 //// Assignment -------------------
