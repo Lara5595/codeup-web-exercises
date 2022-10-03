@@ -291,7 +291,14 @@ const users = [
         yearsOfExperience: 9
     }
 ];
-
+// the old way is
+// var threeLangOld = [];
+// for (var i =0; i<users.length; i++)
+//     console.log(users[i].languages.length)
+//     if (users[i].languages.length > 2) {
+//         threeLangOld.push(users[i]);
+//     }
+// console.log(threeLangOld);
 
 //2. Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array
 
@@ -310,23 +317,47 @@ let totalYears = users.reduce((acc, element, index, array) => {
 console.log(`The total years of experience is ${totalYears}`);
 
 // 5. Use .reduce to get the longest email from the list of users.
-let longestEmail = users.reduce((acc, element) => {
-    // console.log(element.email.length);
-    if (acc.length < element.email.length) {
-        return element.email
-    } return acc
-},"")
-console.log(longestEmail);
+// let longestEmail = users.reduce((acc, element) => {
+//     // console.log(element.email.length);
+//     if (acc.length < element.email.length) {
+//         return element.email
+//     } return acc
+// },"")
+// console.log(longestEmail);
 
+// or
+let longestEmail = users.reduce((currentLongestEmail, user)=> {
+    return currentLongestEmail.length > user.email.length ? currentLongestEmail : user.email;
+});
+console.log(longestEmail);
 
 // 6. Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
 let listUser = users.reduce((acc, element) => {
     return acc +  element.name + ","
 
-}, "")
+}, "Your instructors are: ")
 console.log(listUser)
 
+ //             OR This function does not have a comma after the last name
+// let userNamesBetter = users.reduce((acc, element, index, array) => {
+//     return acc + `${acc ? ', ' : 'Your instructors are: '} ${element.name} ${ (index == (array.length -1)) ? "." : '' }`
+// })
+// console.log(userNamesBetter)
+
+
+// Use .reduce to get the unique list of languages from the list of users.
+// this function if the languages is unique it will push it into the array
+let uniqueLanguages = users.reduce((acc, user)=> {
+    user.languages.forEach(function(language){
+        if (!acc.includes(language)) {
+            acc.push(language);
+        }
+    });
+    return acc
+
+}, []);
+console.log(uniqueLanguages)
 
 //          Bonus
 
@@ -415,8 +446,8 @@ console.log(dogsNamedLexis);
 
 // TODO 6: using filter, create a new array containing only dogs that are trained and younger than 10
 console.log('Exercise 6:');
-const dogsTrainedAndYounger = dogs.filter(dog => dog.age < 10 && dog.isTrained == "true");
-console.log(dogsTrainedAndYounger)
+// const dogsTrainedAndYounger = dogs.filter(dog => dog.age < 10 && dog.isTrained == "true");
+// console.log(dogsTrainedAndYounger)
 
 // REDUCE
 // TODO 7: using reduce, return a string containing all dog names together with no spaces ("BubblesLexieDoggy...")
