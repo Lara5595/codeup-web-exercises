@@ -160,34 +160,34 @@ const prices1 = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
                 // // .reduce it reduces an array to one value ///////////////////////////////
 // // you need a accumulator and a element
 
-const prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
-
-const totalCost = prices.reduce(function (total, price){
-    return total + price;
-})
-
-console.log(totalCost);
+// const prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+//
+// const totalCost = prices.reduce(function (total, price){
+//     return total + price;
+// })
+//
+// console.log(totalCost);
 
 
 // At index 0 it is like it does let total = array[0]
 
-let total = prices.reduce(function(total, itemPrice, index){
-    console.log(`The index is ${index}, the total is ${total.toFixed(2)}, the itemPrice is ${itemPrice}`);
-    return total + itemPrice;
-});
-$("#output").append(`<p>The total is ${totalCost}</p>`);
+// let total = prices.reduce(function(total, itemPrice, index){
+//     console.log(`The index is ${index}, the total is ${total.toFixed(2)}, the itemPrice is ${itemPrice}`);
+//     return total + itemPrice;
+// });
+// $("#output").append(`<p>The total is ${totalCost}</p>`);
 
 
 // The function passed to the reduce method takes an extra parameter, the accumulator is often abbreviated "acc"
 
 
-const averagePrice = prices.reduce((function (accumulator, current, index, array){
-    accumulator += current;
-    if (index === array.length -1) {
-        return accumulator/array.length;
-    }
-    return accumulator;
-}))
+// const averagePrice = prices.reduce((function (accumulator, current, index, array){
+//     accumulator += current;
+//     if (index === array.length -1) {
+//         return accumulator/array.length;
+//     }
+//     return accumulator;
+// }))
 
 
 const cars = [
@@ -227,26 +227,26 @@ console.log(mileages);
 
 
 //              This returns the highest mileage from the array
-const highestMileage = cars.reduce((accumulator, car, index, array) =>{
-    accumulator.push(car.mileage);
-    if (index === array.length -1){
-        return accumulator.sort(function (a, b){
-            return b-a
-        })[0];
-    }
-    return accumulator;
-}, []);
-console.log(highestMileage);
-
-
-// or
-const highestMileage2 = cars.reduce((accumulator, car, index, array) => {
-    accumulator.push(car.mileage);
-    return accumulator;
-    },[]).reduce((accumulator, mileage) => {
-    return Math.max(accumulator, mileage);
-    });
-console.log(highestMileage);
+// const highestMileage = cars.reduce((accumulator, car, index, array) =>{
+//     accumulator.push(car.mileage);
+//     if (index === array.length -1){
+//         return accumulator.sort(function (a, b){
+//             return b-a
+//         })[0];
+//     }
+//     return accumulator;
+// }, []);
+// console.log(highestMileage);
+//
+//
+// // or
+// const highestMileage2 = cars.reduce((accumulator, car, index, array) => {
+//     accumulator.push(car.mileage);
+//     return accumulator;
+//     },[]).reduce((accumulator, mileage) => {
+//     return Math.max(accumulator, mileage);
+//     });
+// console.log(highestMileage);
 
 
 
@@ -297,7 +297,6 @@ const users = [
 
 let knowsMoreThanThreeLanguages = users.filter(user => user.languages.length >= 3);
 console.log(knowsMoreThanThreeLanguages)
-
 //3. Use .map to create an array of strings where each element is a user's email address
 let emailAddress = users.map(user => user.email)
 console.log(emailAddress);
@@ -305,20 +304,135 @@ console.log(emailAddress);
 //4. Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
 
 let totalYears = users.reduce((acc, element, index, array) => {
-    console.log(element.yearsOfExperience);
+    // console.log(element.yearsOfExperience);
     return  acc + element.yearsOfExperience / array.length
 }, 0)
 console.log(`The total years of experience is ${totalYears}`);
 
 // 5. Use .reduce to get the longest email from the list of users.
-let longestEmail = users.reduce((acc, element, index) => {
-    console.log(element.email.length);
+let longestEmail = users.reduce((acc, element) => {
+    // console.log(element.email.length);
     if (acc.length < element.email.length) {
         return element.email
     } return acc
 },"")
 console.log(longestEmail);
+
+
 // 6. Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
+let listUser = users.reduce((acc, element) => {
+    return acc +  element.name + ","
 
-// need to finish 5 and 6 and need to do resume
+}, "")
+console.log(listUser)
+
+
+//          Bonus
+
+// TODO: Given the following array, complete the todos...
+const dogs = [
+    {
+        dogName: 'Bubbles',
+        age: 10,
+        isTrained: false
+    },
+    {
+        dogName: 'Lexie',
+        age: 3,
+        isTrained: true
+    },
+    {
+        dogName: 'Doggy',
+        age: 5,
+        isTrained: false
+    },
+    {
+        dogName: 'Flopper',
+        age: 3,
+        isTrained: true
+    },
+    {
+        dogName: 'Lexie',
+        age: 1,
+        isTrained: true
+    },
+    {
+        dogName: 'Skip',
+        age: 7,
+        isTrained: true
+    },
+    {
+        dogName: 'Blue',
+        age: 4,
+        isTrained: false
+    }
+];
+// MAP
+// TODO 1: using map, create a new array of dog names from the dogs array
+console.log('Exercise 1:');
+
+let dogNames = dogs.map(dog => dog.dogName);
+console.log(dogNames);
+
+// or
+// let dogNames = dogs.map(function (dog){
+//     return dog.dogName
+// })
+console.log(dogNames)
+
+// TODO 2: using map, create a new array of dog ages from the dogs array
+console.log('Exercise 2:');
+let dogAges = dogs.map(dog => dog.age);
+console.log(dogAges);
+
+// TODO 3: using map, create a new array of dog objects from the dogs array that only have dog names and age properties and values
+console.log('Exercise 3:');
+let newDogsArray = dogs.map(dog => {
+    delete dog.isTrained
+    return dog
+})
+console.log(newDogsArray)
+
+let dogsValues = dogs.map(dog => {
+    dog.values = 'new property'
+    return dog
+})
+
+console.log(dogsValues)
+
+// FILTER
+// TODO 4: using filter, create a new array containing only dogs younger than 10 years old
+console.log('Exercise 4:');
+
+let dogsUnderTen = dogs.filter(dog => dog.age <= 9);
+console.log(dogsUnderTen)
+
+// TODO 5: using filter, create a new array containing only dogs named 'Lexie'
+console.log('Exercise 5:');
+let dogsNamedLexis = dogs.filter(dog => dog.dogName === "Lexie");
+console.log(dogsNamedLexis);
+
+// TODO 6: using filter, create a new array containing only dogs that are trained and younger than 10
+console.log('Exercise 6:');
+const dogsTrainedAndYounger = dogs.filter(dog => dog.age < 10 && dog.isTrained == "true");
+console.log(dogsTrainedAndYounger)
+
+// REDUCE
+// TODO 7: using reduce, return a string containing all dog names together with no spaces ("BubblesLexieDoggy...")
+console.log('Exercise 7:');
+// TODO 8: using reduce, return the total of adding all dog ages together (18)
+console.log('Exercise 8:');
+// TODO 9: using reduce, return an array of dog objects with all isTrained properties set to true
+console.log('Exercise 9:');
+// EXTRA CHALLENGES
+// TODO 10: what is the average age of each dog?
+console.log('Exercise 10:');
+// TODO 11: what is the average age of dogs that are trained?
+console.log('Exercise 11:');
+// TODO 12: what is the average length of names of untrained dogs?
+console.log('Exercise 12:');
+// TODO 13: what are the combined ages of all dogs in dog years? (7x more than a human year)
+console.log('Exercise 13:');
+// TODO 14: create a string of the first letters of each dog name for dogs three years old (should be "LF")
+console.log('Exercise 14:');
