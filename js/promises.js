@@ -158,9 +158,23 @@ function getLastCommit(username){
 fetch(`https://api.github.com/users/${username}/events/public`, {
     headers: {'Authorization': 'GITHUB_PROMISES_TOKEN'}
 }).then( response => response.json())
-    .then( username => { console.log(username[0].created_at)
-    console.log(username[0].payload.commits[0].message)})
-    .catch( error => console.error(error));
+    .then( username => {
+        // console.log(username[0].created_at)
+        const dateOfLastPush = new Date(username[0].created_at).toDateString();
+        console.log(dateOfLastPush);
+        console.log(username[0].payload.commits[0].message)})
+        .catch( error => console.error(error));
 }
 
 
+/// jason's method
+async function getUserLastCommitAsync(username) {
+    try {
+        let response = await fetch(`https://api.github.com/usersss/${username}`);
+        let events = await response.json();
+        console.log(events);
+    }
+    catch(err) {
+        console.log(err);
+    }
+}
