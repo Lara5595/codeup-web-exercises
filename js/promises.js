@@ -152,12 +152,15 @@ function generateGreeting(greetingsArray, namesArray, displayFunction){
 ///////////////////////////////////Assignment //////////////////////////////////////////////////////////
 
 
-// 3.  Create a function that accepts a GitHub username, and returns a promise that resolves returning just the date of the last commit that user made. Reference the github api documentation to achieve this.
+//3. Create a function that accepts a GitHub username, and returns a promise that resolves returning just the date of the last commit that user made. Reference the github api documentation to achieve this.
 
-fetch('https://api.github.com/users/Lara5595', {
+function getLastCommit(username){
+fetch(`https://api.github.com/users/${username}/events/public`, {
     headers: {'Authorization': 'GITHUB_PROMISES_TOKEN'}
 }).then( response => response.json())
-    .then( username => console.log(username))
+    .then( username => { console.log(username[0].created_at)
+    console.log(username[0].payload.commits[0].message)})
     .catch( error => console.error(error));
+}
 
 
