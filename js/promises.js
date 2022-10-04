@@ -85,5 +85,12 @@ const aPromise = new Promise((resolve, reject) => {
 
 aPromise.then(value => console.log(value)).catch(error => console.log(error));
 
+
+
+
+
+
+
+
     /// or fetch return aPromise
 fetch("data/murals.json").then(response => response.json()).then(data => console.log(data)).catch(error => console.log("Oh no, it doesn't work!"));

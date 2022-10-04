@@ -10,11 +10,11 @@ function isNumber(value) {
 // Write a function that accepts an array of numbers and returns its average.
 // Bonus: if there are any non-numeric values in the array, return false. Numeric strings should count a numeric values.
 
-let array = [5, 10, 15];
-
-let array2 = [-25, -22, 258, 68];
-
-let array3 = ["notAnumber", 25, 78];
+// let array = [5, 10, 15];
+//
+// let array2 = [-25, -22, 258, 68];
+//
+// let array3 = ["notAnumber", 25, 78];
 
 // this function passes but it does not give you a false
 // function arrayAverage(array){
@@ -25,70 +25,70 @@ let array3 = ["notAnumber", 25, 78];
 
 
 //Bonus runs and gives you a false
-function arrayAverage(array) {
-    let total = 0;
-    for (let i = 0; i < array.length; i++) {
-        if (!isNumber(array[i])) {
-            return false;
-        }
-        total += array[i];
-    }
-
-    return total / array.length;
-}
+// function arrayAverage(array) {
+//     let total = 0;
+//     for (let i = 0; i < array.length; i++) {
+//         if (!isNumber(array[i])) {
+//             return false;
+//         }
+//         total += array[i];
+//     }
+//
+//     return total / array.length;
+// }
 
 
 
 // Write a function that accepts an array of strings and returns the longest string. If there are two strings of equal length it returns the one with the lowest index.
 //Bonus: if there are any values that are not strings, return false
 
-let stringsArray = ["Jabba", "Darth Maul", "Hondo"];
-
-function longestString(arrayOfStrings) {
-    let longest = '';
-    for (let i = 0; i < arrayOfStrings.length; i++) {
-        if (arrayOfStrings[i].length > longest.length) {
-            longest = arrayOfStrings[i];
-        }
-    } return longest;
-}
-
+// let stringsArray = ["Jabba", "Darth Maul", "Hondo"];
+//
+// function longestString(arrayOfStrings) {
+//     let longest = '';
+//     for (let i = 0; i < arrayOfStrings.length; i++) {
+//         if (arrayOfStrings[i].length > longest.length) {
+//             longest = arrayOfStrings[i];
+//         }
+//     } return longest;
+// }
+//
 
 
 
 
 // Write a function, calculateTotalStudents, that returns the total number of students recorded in the classes array.
 // The array has objects
-let classes = [
-    {class: "6th grade history", students: 18},
-    {class: "7th grade history", students: 20},
-    {class: "8th grade history", students: 22}
-];
-
-function calculateTotalStudents(array) {
-    let total = 0;
-    for (let i = 0; i < array.length; i++) {
-        total += array[i].students
-    }
-    return total;
-}
-
-console.log(calculateTotalStudents(classes)+ "The total is");
-
-
-
-// adds the total in a array
-let numbericArray = [8, 10, 20];
-function arraySum(array){
-    let total = 0;
-    for (let i = 0; i < array.length; i++) {
-        total += array[i];
-    }
-    return total;
-}
-
-console.log(arraySum(numbericArray));
-
+// let classes = [
+//     {class: "6th grade history", students: 18},
+//     {class: "7th grade history", students: 20},
+//     {class: "8th grade history", students: 22}
+// ];
+//
+// function calculateTotalStudents(array) {
+//     let total = 0;
+//     for (let i = 0; i < array.length; i++) {
+//         total += array[i].students
+//     }
+//     return total;
+// }
+//
+// console.log(calculateTotalStudents(classes)+ "The total is");
+//
+//
+//
+// // adds the total in a array
+// let numbericArray = [8, 10, 20];
+// function arraySum(array){
+//     let total = 0;
+//     for (let i = 0; i < array.length; i++) {
+//         total += array[i];
+//     }
+//     return total;
+// }
+//
+// console.log(arraySum(numbericArray));
+//
 
 
 // Write a function called convertToObject that takes in a string that is the name of a class, and a number that is the number of students, and returns an object with the properties `class` and `students`
@@ -449,4 +449,30 @@ $("#source").on('keyup', function(){
 });
 
 
+// When the mouse enters the h2 with the text "Lorem Generator",
+// A paragraph containing lorem appears in the div with the id of loremParagraphs
+$("#loremParagraphs h2").mouseenter( function (){
+    $(this).after("<p id='loremParagraphs'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt et exercitationem fugiat repellat ut, veniam. Amet assumenda blanditiis eum impedit laborum nulla odit, omnis quaerat quis, quos sed, sunt veritatis.</p>")
+})
+// or
+// let lorem = <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid aut autem ea eligendi exercitationem illum inventore magni molestiae nostrum nulla omnis, perferendis quam quo reprehenderit sint tenetur voluptas, voluptate."</p>
+//
+// $("#loremParagraphs h2").mouseenter( function (){
+//     $("loremParagraphs").append(lorem);
+// });
 
+
+// When the user clicks on the "Hot Pink It" button, all the text in the div with the id of loremParagraphs becomes hotpink if it's black, or black if it's hotpink.
+
+$('#hotPinkIt').on('click', function (){
+    $("loremParagraphs").toggleClass('hotpink');
+});
+
+
+// Bonus challenge: when the user clicks on the "Pink Blinky" button, all the text in the div with the id of loremParagraphs alternates between black and hotpink once every three seconds.
+
+$("#blinkPink").on('click', function (){
+    setInterval(function (){
+        $("loremParagraphs").toggleClass('hotpink');
+    }, 3000);
+})
