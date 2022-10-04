@@ -465,14 +465,14 @@ $("#loremParagraphs h2").mouseenter( function (){
 // When the user clicks on the "Hot Pink It" button, all the text in the div with the id of loremParagraphs becomes hotpink if it's black, or black if it's hotpink.
 
 $('#hotPinkIt').on('click', function (){
-    $("loremParagraphs").toggleClass('hotpink');
+    $("#loremParagraphs").toggleClass('hotpink');
 });
 
 
 // Bonus challenge: when the user clicks on the "Pink Blinky" button, all the text in the div with the id of loremParagraphs alternates between black and hotpink once every three seconds.
 
 $("#blinkPink").on('click', function (){
-    setInterval(function (){
-        $("loremParagraphs").toggleClass('hotpink');
+    setTimeout(function (){
+        $("#loremParagraphs").toggleClass('hotpink');
     }, 3000);
 })
