@@ -14,6 +14,8 @@
 // https://glitch.com/amused-typical-skunk
 
 // The R in CRUD: READ
+// Created two variables so we wont be using the whole urls
+
 const booksURL = "https://tender-brick-bowler.glitch.me/books"
 const moviesURL = "https://tender-brick-bowler.glitch.me/movies"
 
@@ -52,7 +54,7 @@ getBooks();
 
 // The U in CRUD: Updating with PUT and PATCH request
 // We'll use PUT to replace the entire content
-// We'll use PATCH to modify only part fo the entry
+// We'll use PATCH to modify only part of the entry
 
 let modification = {
     title: "Eleanor of Aquitaine: Queen of France, Queen of England"
